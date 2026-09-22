@@ -8,18 +8,24 @@ visited = []
 
 # Set Seed URL and add to frontier
 
+
 # Fetch Page method
+def fetch_page():
+    return None
 
 # Retrieve next URL from frontier
-#next_url =
+def next_url():
+    if not frontier.isEmpty():
+        temp_url = frontier.pop(0)
+        return temp_url
+    return None
+
 
 # Crawler Loop -- Breadth First Search  -- probably place into a method
 while(True):
     # Check if frontier is empty
     if frontier.isEmpty():
         break
-
-    # 
 
     # Get next URL from frontier
     #current = next_url()

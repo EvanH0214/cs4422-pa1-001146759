@@ -7,6 +7,8 @@ frontier = []
 visited = []
 
 # Set Seed URL and add to frontier
+seed_url = "https://www.kennesaw.edu/"
+frontier.addpend(seed_url)
 
 
 # Fetch Page method

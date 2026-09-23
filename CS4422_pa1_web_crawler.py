@@ -6,6 +6,9 @@ frontier = []
 # Visited Pages
 visited = []
 
+# Max number of pages
+max_pages = 500
+
 # Set Seed URL and add to frontier
 seed_url = "https://www.kennesaw.edu/"
 frontier.addpend(seed_url)
@@ -27,6 +30,10 @@ def next_url():
 while(True):
     # Check if frontier is empty
     if frontier.isEmpty():
+        break
+
+    # Check if max number of pages has been reached
+    if visited.length > max_pages:
         break
 
     # Get next URL from frontier

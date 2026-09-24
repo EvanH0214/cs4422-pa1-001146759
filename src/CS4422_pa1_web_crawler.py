@@ -2,6 +2,7 @@
 import requests
 import json
 from pathlib import Path
+from bs4 import BeautifulSoup
 
 # Crawler Frontier
 frontier = []
@@ -54,12 +55,31 @@ while(True):
         break
 
     # Get next URL from frontier
-    #current = next_url()
+    current = next_url()
 
     # Check if current URL has already been visisted
+    if current in visited:
+        continue
+
+    # Fetch current page
+    page_content = fetch_page(current)
 
     # Scrape current page for links
+    soup = BeautifulSoup(page_content, "html.parser")
+    for link in soup.find_all("a", href=True):
+        print(link.get("href"))
 
-    # Normalize all links and add to frontier
+        # Normalize all links
 
-    # Remove current URL from frontier and add to visited
+
+        # Add links to frontier if not already visited or in frontier
+        #if link.get("href") not in visited and link.get("href") not in frontier:
+        #    frontier.append(link.get("href"))
+
+
+    # Add current URL to visited
+    visited.append(current)
+
+    # testing
+    print("Frontier: ", frontier)
+    print("Visited: ", visited)

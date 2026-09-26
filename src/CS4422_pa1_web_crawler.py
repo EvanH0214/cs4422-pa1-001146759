@@ -3,9 +3,10 @@ import requests
 import json
 from pathlib import Path
 from bs4 import BeautifulSoup
+from collections import deque
 
 # Crawler Frontier
-frontier = []
+frontier = deque()
 
 # Visited Pages
 visited = []
@@ -32,7 +33,7 @@ def fetch_page(url):
 # Retrieve next URL from frontier
 def next_url():
     if frontier:
-        temp_url = frontier.pop(0)
+        temp_url = frontier.popleft()
         return temp_url
     return None
 
@@ -66,15 +67,14 @@ while(True):
 
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")
-    for link in soup.find_all("a", href=True):
-        print(link.get("href"))
+    for link in soup.select("a", href=True):
 
         # Normalize all links
-
+        
 
         # Add links to frontier if not already visited or in frontier
-        #if link.get("href") not in visited and link.get("href") not in frontier:
-        #    frontier.append(link.get("href"))
+        if link.get("href") not in visited and link.get("href") not in frontier:
+            frontier.append(link.get("href"))
 
 
     # Add current URL to visited

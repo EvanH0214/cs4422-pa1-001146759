@@ -3,9 +3,11 @@ import requests
 import json
 from pathlib import Path
 from bs4 import BeautifulSoup
+from collections import deque
+import w3lib.url
 
 # Crawler Frontier
-frontier = []
+frontier = deque()
 
 # Visited Pages
 visited = []
@@ -32,7 +34,7 @@ def fetch_page(url):
 # Retrieve next URL from frontier
 def next_url():
     if frontier:
-        temp_url = frontier.pop(0)
+        temp_url = frontier.popleft()
         return temp_url
     return None
 
@@ -52,6 +54,7 @@ while(True):
 
     # Check if max number of pages has been reached
     if len(visited) >= max_pages:
+        print("Max number of pages reached.")
         break
 
     # Get next URL from frontier
@@ -66,20 +69,20 @@ while(True):
 
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")
-    for link in soup.find_all("a", href=True):
-        print(link.get("href"))
+    for link in soup.select("a", href=True):
 
         # Normalize all links
+        normalized_link = w3lib.url.canonicalize_url(str(link.get("href")))
 
+        # Remove invalid urls
+        if not normalized_link.startswith("http"):
+            continue
 
         # Add links to frontier if not already visited or in frontier
-        #if link.get("href") not in visited and link.get("href") not in frontier:
-        #    frontier.append(link.get("href"))
+        if link.get("href") not in visited and link.get("href") not in frontier:
+            frontier.append(link.get("href"))
 
 
     # Add current URL to visited
     visited.append(current)
 
-    # testing
-    print("Frontier: ", frontier)
-    print("Visited: ", visited)

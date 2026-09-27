@@ -12,12 +12,17 @@ frontier = deque()
 # Visited Pages
 visited = []
 
+# Create header for requests
+headers = {
+    "User-Agent": "KSU CS4422-Crawler/1.0"
+}
+
 # Corpus file (path)
 output_path = Path("artifacts/pages.jsonl")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 
 # Max number of pages
-max_pages = 500
+max_pages = 50
 
 # Set Seed URL and add to frontier
 seed_url = "https://www.kennesaw.edu/"
@@ -26,7 +31,7 @@ frontier.append(seed_url)
 # Fetch Page method
 def fetch_page(url):
     # sends request and waits 10 seconds before timeout
-    response = requests.get(url, timeout = 10)
+    response = requests.get(url, timeout = 10, headers=headers)
     if response.status_code == 200:
         return response.text
     return None
@@ -86,3 +91,4 @@ while(True):
     # Add current URL to visited
     visited.append(current)
 
+    print("\n\nVisited: ", visited)

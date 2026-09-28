@@ -5,6 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from collections import deque
 import w3lib.url
+from protego import Protego
 
 # Crawler Frontier
 frontier = deque()
@@ -36,6 +37,16 @@ def fetch_page(url):
         return response.text
     return None
 
+# Fetch robots.txt and parse
+def fetch_robots_txt(url):
+    r = requests.get(url + "/robots.txt", timeout = 10, headers=headers)
+    if r.status_code == 200:
+        rp = Protego.parse(r.text)
+        if rp.can_fetch("*", user_agent="KSU CS4422-Crawler/1.0"):
+            return True
+        else:
+            return False
+
 # Retrieve next URL from frontier
 def next_url():
     if frontier:
@@ -51,7 +62,7 @@ def dump_corpus(page):
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
 
-# Crawler Loop -- Breadth First Search  -- probably place into a method
+# Crawler Loop -- Breadth First Search  
 while(True):
     # Check if frontier is empty
     if not frontier:
@@ -69,8 +80,11 @@ while(True):
     if current in visited:
         continue
 
-    # Fetch current page
-    page_content = fetch_page(current)
+    # Check if current URL is allowed by robots.txt
+    if fetch_robots_txt(current):
+
+        # Fetch current page only if allowed by robots.txt
+        page_content = fetch_page(current)
 
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")

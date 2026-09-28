@@ -5,6 +5,7 @@ from pathlib import Path
 from bs4 import BeautifulSoup
 from collections import deque
 import w3lib.url
+from protego import Protego
 
 # Crawler Frontier
 frontier = deque()
@@ -12,12 +13,17 @@ frontier = deque()
 # Visited Pages
 visited = []
 
+# Create header for requests
+headers = {
+    "User-Agent": "KSU CS4422-Crawler/1.0"
+}
+
 # Corpus file (path)
 output_path = Path("artifacts/pages.jsonl")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 
 # Max number of pages
-max_pages = 500
+max_pages = 50
 
 # Set Seed URL and add to frontier
 seed_url = "https://www.kennesaw.edu/"
@@ -26,10 +32,20 @@ frontier.append(seed_url)
 # Fetch Page method
 def fetch_page(url):
     # sends request and waits 10 seconds before timeout
-    response = requests.get(url, timeout = 10)
+    response = requests.get(url, timeout = 10, headers=headers)
     if response.status_code == 200:
         return response.text
     return None
+
+# Fetch robots.txt and parse
+def fetch_robots_txt(url):
+    r = requests.get(url + "/robots.txt", timeout = 10, headers=headers)
+    if r.status_code == 200:
+        rp = Protego.parse(r.text)
+        if rp.can_fetch("*", user_agent="KSU CS4422-Crawler/1.0"):
+            return True
+        else:
+            return False
 
 # Retrieve next URL from frontier
 def next_url():
@@ -46,7 +62,7 @@ def dump_corpus(page):
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
 
-# Crawler Loop -- Breadth First Search  -- probably place into a method
+# Crawler Loop -- Breadth First Search  
 while(True):
     # Check if frontier is empty
     if not frontier:
@@ -64,8 +80,11 @@ while(True):
     if current in visited:
         continue
 
-    # Fetch current page
-    page_content = fetch_page(current)
+    # Check if current URL is allowed by robots.txt
+    if fetch_robots_txt(current):
+
+        # Fetch current page only if allowed by robots.txt
+        page_content = fetch_page(current)
 
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")
@@ -86,3 +105,4 @@ while(True):
     # Add current URL to visited
     visited.append(current)
 
+    print("\n\nVisited: ", visited)

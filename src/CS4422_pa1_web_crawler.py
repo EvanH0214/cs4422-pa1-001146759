@@ -76,6 +76,14 @@ def dump_corpus(page):
     with output_path.open("a", encoding="utf-8") as corpus_file:
         corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
 
+# Retry method
+
+
+# Politeness floor
+
+
+# Detect duplicates method
+
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
 
@@ -102,6 +110,7 @@ while(True):
 
         # Fetch current page only if allowed by robots.txt
         page_content = fetch_page(current)
+
 
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")

@@ -8,6 +8,10 @@ import w3lib.url
 from protego import Protego
 import argparse
 
+# Configurations
+REQUEST_TIMEOUT = 10
+MAX_REDIRECTS = 5
+
 # Crawler Frontier
 frontier = deque()
 
@@ -48,15 +52,23 @@ max_pages = args.max_pages
 
 # Fetch Page method
 def fetch_page(url):
+    current_url = url
+    redirect_urls = []
+    for redirect_count in range(MAX_REDIRECTS + 1):
+        # Detects redirect loop
+        if current_url in redirect_urls:
+            print(f"Redirect loop detected at: {current_url}")
+        redirect_urls.append(current_url)
+
     # sends request and waits 10 seconds before timeout
-    response = requests.get(url, timeout = 10, headers=headers)
+    response = requests.get(url, timeout = REQUEST_TIMEOUT, headers=headers)
     if response.status_code == 200:
         return response.text
     return None
 
 # Fetch robots.txt and parse
 def fetch_robots_txt(url):
-    r = requests.get(url + "/robots.txt", timeout = 10, headers=headers)
+    r = requests.get(url + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
     if r.status_code == 200:
         rp = Protego.parse(r.text)
         if rp.can_fetch("*", user_agent="KSU CS4422-Crawler/1.0"):
@@ -75,6 +87,14 @@ def next_url():
 def dump_corpus(page):
     with output_path.open("a", encoding="utf-8") as corpus_file:
         corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
+
+# Retry method
+
+
+# Politeness floor
+
+
+# Detect duplicates method
 
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
@@ -103,6 +123,7 @@ while(True):
         # Fetch current page only if allowed by robots.txt
         page_content = fetch_page(current)
 
+
     # Scrape current page for links
     soup = BeautifulSoup(page_content, "html.parser")
     for link in soup.select("a", href=True):
@@ -127,3 +148,10 @@ while(True):
     visited.append(current)
 
     print("\n\nVisited: ", visited)
+
+# Error Handling
+
+# DNS failures (domain doesn't resolve)
+
+# Connection timeouts (server unreachable)
+

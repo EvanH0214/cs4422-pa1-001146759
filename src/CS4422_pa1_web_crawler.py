@@ -114,6 +114,10 @@ while(True):
         if not normalized_link.startswith("http"):
             continue
 
+        # Check if link is within the kennesaw.edu domain
+        if "kennesaw.edu" not in normalized_link:
+            continue
+
         # Add links to frontier if not already visited or in frontier
         if link.get("href") not in visited and link.get("href") not in frontier:
             frontier.append(link.get("href"))

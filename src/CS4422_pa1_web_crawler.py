@@ -119,8 +119,8 @@ while(True):
             continue
 
         # Add links to frontier if not already visited or in frontier
-        if link.get("href") not in visited and link.get("href") not in frontier:
-            frontier.append(link.get("href"))
+        if normalized_link not in visited and normalized_link not in frontier:
+            frontier.append(normalized_link)
 
 
     # Add current URL to visited

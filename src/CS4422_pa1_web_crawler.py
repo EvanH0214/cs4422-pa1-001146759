@@ -6,6 +6,7 @@ from bs4 import BeautifulSoup
 from collections import deque
 import w3lib.url
 from protego import Protego
+import argparse
 
 # Crawler Frontier
 frontier = deque()
@@ -22,12 +23,28 @@ headers = {
 output_path = Path("artifacts/pages.jsonl")
 output_path.parent.mkdir(parents=True, exist_ok=True)
 
-# Max number of pages
-max_pages = 50
 
-# Set Seed URL and add to frontier
-seed_url = "https://www.kennesaw.edu/"
-frontier.append(seed_url)
+# Create a parser using argparse
+parser = argparse.ArgumentParser(description="seed url and max number of pages")
+parser.add_argument("--seed_url", type=str, help="Seed URL")
+parser.add_argument("--max_pages", type=int, help="Crawl budget")
+args = parser.parse_args()
+
+# Collect user input for seed url and max number of pages if not provided in command line
+if not args.seed_url:
+    args.seed_url = input("Enter seed URL: ")
+
+if not args.max_pages:
+    while True:
+        try:
+            args.max_pages = int(input("Enter max pages :"))
+            break
+        except ValueError:
+            print("Invalid input")
+
+# Set user input for seed url and max number of pages    
+frontier.append(args.seed_url)
+max_pages = args.max_pages
 
 # Fetch Page method
 def fetch_page(url):

@@ -24,7 +24,7 @@ headers = {
 }
 
 # Corpus file (path)
-output_path = Path("artifacts/pages.jsonl")
+output_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
 output_path.parent.mkdir(parents=True, exist_ok=True)
 
 
@@ -41,7 +41,7 @@ if not args.seed_url:
 if not args.max_pages:
     while True:
         try:
-            args.max_pages = int(input("Enter max pages :"))
+            args.max_pages = int(input("Enter max pages: "))
             break
         except ValueError:
             print("Invalid input")
@@ -59,19 +59,28 @@ def fetch_page(url):
         if current_url in redirect_urls:
             print(f"Redirect loop detected at: {current_url}")
         redirect_urls.append(current_url)
-
-    # sends request and waits 10 seconds before timeout
-    response = requests.get(url, timeout = REQUEST_TIMEOUT, headers=headers)
-    if response.status_code == 200:
-        return response.text
-    return None
+        try:
+            # sends request and waits 10 seconds before timeout
+            response = requests.get(current_url, timeout = REQUEST_TIMEOUT, headers=headers, allow_redirects=False, stream=True)
+            if response.status_code == 200:
+                return response.text
+        # Catches timeouts
+        except requests.exceptions.Timeout:
+            print(f"Timeout while fetching, at: {current_url}")
+        except requests.exceptions.SSLError:
+            print(f"TLS/SSL error while fetching, at: {current_url}")
+        except requests.exceptions.ConnectionError:
+            print(f"Connection failure while fetching, at: {current_url}")
+        except requests.exceptions.RequestException as e:
+            print(f"Request error: {e} while fetching at: {current_url}")
+        
 
 # Fetch robots.txt and parse
 def fetch_robots_txt(url):
     r = requests.get(url + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
     if r.status_code == 200:
         rp = Protego.parse(r.text)
-        if rp.can_fetch("*", user_agent="KSU CS4422-Crawler/1.0"):
+        if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
             return True
         else:
             return False
@@ -98,7 +107,6 @@ def dump_corpus(page):
 
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
-
 # Crawler Loop -- Breadth First Search  
 while(True):
     # Check if frontier is empty
@@ -119,9 +127,18 @@ while(True):
 
     # Check if current URL is allowed by robots.txt
     if fetch_robots_txt(current):
-
         # Fetch current page only if allowed by robots.txt
         page_content = fetch_page(current)
+        # Continues only if page is successfully fetched
+        if page_content is None:
+            visited.append(current)
+            continue
+        # Dumps page content into corpus
+        dump_corpus(page_content)
+    else:
+        print("Robots.txt did not allow this URL")
+        visited.append(current)
+        continue
 
 
     # Scrape current page for links

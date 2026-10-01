@@ -7,6 +7,7 @@ from collections import deque
 import w3lib.url
 from protego import Protego
 import argparse
+from urllib.parse import urlparse
 
 # Configurations
 REQUEST_TIMEOUT = 10
@@ -17,6 +18,9 @@ frontier = deque()
 
 # Visited Pages
 visited = []
+
+# Pages blocked by robots.txt
+blocked = []
 
 # Create header for requests
 headers = {
@@ -77,7 +81,7 @@ def fetch_page(url):
 
 # Fetch robots.txt and parse
 def fetch_robots_txt(url):
-    r = requests.get(url + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
+    r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
     if r.status_code == 200:
         rp = Protego.parse(r.text)
         if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
@@ -136,8 +140,8 @@ while(True):
         # Dumps page content into corpus
         dump_corpus(page_content)
     else:
-        print("Robots.txt did not allow this URL")
-        visited.append(current)
+        print("Robots.txt did not allow this URL " + current)
+        blocked.append(current)
         continue
 
 
@@ -164,7 +168,10 @@ while(True):
     # Add current URL to visited
     visited.append(current)
 
-    print("\n\nVisited: ", visited)
+    #print("\n\nVisited: ", visited)
+
+print("\n\nFinal: ", visited)
+print("\nBlocked: ", blocked)
 
 # Error Handling
 

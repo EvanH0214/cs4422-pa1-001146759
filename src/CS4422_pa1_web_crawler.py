@@ -1,4 +1,6 @@
 # import necessary libraries
+from pyclbr import Class
+
 import requests
 import json
 from pathlib import Path
@@ -21,6 +23,9 @@ visited = []
 
 # Pages blocked by robots.txt
 blocked = []
+
+# List of host objects to store robots.txt information per host
+hosts = []
 
 # Create header for requests
 headers = {
@@ -81,13 +86,26 @@ def fetch_page(url):
 
 # Fetch robots.txt and parse
 def fetch_robots_txt(url):
+
+    #if any(host.get_hostname() == urlparse(url).hostname for host in hosts):
+
+
     r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
+
+    # robots.txt was found
     if r.status_code == 200:
         rp = Protego.parse(r.text)
+        #print("\n\n", url)
+        #print(r.text)
         if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
             return True
         else:
             return False
+
+    # robots.txt was not found
+    elif r.status_code == 404:
+        #print("robots.txt not found")
+        return True
 
 # Retrieve next URL from frontier
 def next_url():
@@ -170,7 +188,8 @@ while(True):
 
     #print("\n\nVisited: ", visited)
 
-print("\n\nFinal: ", visited)
+print("\n\nFrontier: ", frontier)
+print("\nVisited: ", visited)
 print("\nBlocked: ", blocked)
 
 # Error Handling
@@ -179,3 +198,15 @@ print("\nBlocked: ", blocked)
 
 # Connection timeouts (server unreachable)
 
+
+# host class to create host objects
+class host:
+    def __init__(self, hostname, robots_txt):
+        self.hostname = hostname
+        self.robots_txt = robots_txt
+
+    def get_hostname(self):
+        return self.hostname
+
+    def get_robots_txt(self):
+        return self.robots_txt

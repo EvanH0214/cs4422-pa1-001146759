@@ -1,4 +1,21 @@
+# Host class to create host objects
+class Host:
+    def __init__(self, hostname, robots_txt, delay):
+        self.hostname = hostname
+        self.robots_txt = robots_txt
+        self.delay = delay
+
+    def get_hostname(self):
+        return self.hostname
+
+    def get_robots_txt(self):
+        return self.robots_txt
+
+    def get_delay(self):
+        return self.delay
+
 # import necessary libraries
+from pyclbr import Class
 import requests
 import json
 from pathlib import Path
@@ -8,10 +25,12 @@ import w3lib.url
 from protego import Protego
 import argparse
 from urllib.parse import urlparse
+import time
 
 # Configurations
 REQUEST_TIMEOUT = 10
 MAX_REDIRECTS = 5
+POLITENESS_DELAY = 1  
 
 # Crawler Frontier
 frontier = deque()
@@ -21,6 +40,9 @@ visited = []
 
 # Pages blocked by robots.txt
 blocked = []
+
+# List of host objects to store robots.txt information per host
+host_list = []
 
 # Create header for requests
 headers = {
@@ -81,13 +103,54 @@ def fetch_page(url):
 
 # Fetch robots.txt and parse
 def fetch_robots_txt(url):
-    r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
-    if r.status_code == 200:
-        rp = Protego.parse(r.text)
-        if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
+
+    # Check if robots.txt has already been fetched for this host
+    for hosts in host_list:
+        if hosts.get_hostname() == urlparse(url).hostname:
+            if hosts.get_robots_txt() is None:
+                return True
+            else:
+                host = hosts
+                if host.get_delay() > POLITENESS_DELAY:
+                    time.sleep(host.get_delay)
+                else:
+                    time.sleep(POLITENESS_DELAY)
+                return True
+            
+    else:
+        r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
+
+        # robots.txt was found
+        if r.status_code == 200:
+            rp = Protego.parse(r.text)
+
+            # If robots.txt has no crawl delay, use POLITENESS_DELAY
+            if(rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0") is None):
+                host = Host(urlparse(url).hostname, rp, POLITENESS_DELAY)
+                host_list.append(host)
+
+            # if robots.txt has a crawl delay greater than POLITENESS_DELAY, use the delay
+            elif (rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0") > POLITENESS_DELAY):
+                host = Host(urlparse(url).hostname, rp, rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0"))
+                host_list.append(host)
+
+            # if robots.txt has a crawl delay less than the POLITENESS_DELAY
+            else:
+                host = Host(urlparse(url).hostname, rp, POLITENESS_DELAY)
+                host_list.append(host)
+
+
+            if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
+                return True
+            else:
+                return False
+
+        # robots.txt was not found
+        elif r.status_code == 404:
+            host = Host(urlparse(url).hostname, None, POLITENESS_DELAY)
+            host_list.append(host)
+            #print("robots.txt not found")
             return True
-        else:
-            return False
 
 # Retrieve next URL from frontier
 def next_url():
@@ -168,14 +231,16 @@ while(True):
     # Add current URL to visited
     visited.append(current)
 
-    #print("\n\nVisited: ", visited)
+    print("\n\nVisited: ", visited)
 
-print("\n\nFinal: ", visited)
-print("\nBlocked: ", blocked)
+#print("\n\nFrontier: ", frontier)
+#print("\nVisited: ", visited)
+#print("\nBlocked: ", blocked)
 
 # Error Handling
 
 # DNS failures (domain doesn't resolve)
 
 # Connection timeouts (server unreachable)
+
 

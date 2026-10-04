@@ -10,7 +10,6 @@ from protego import Protego
 import argparse
 from urllib.parse import urlparse
 import time
-from threading import Thread
 
 # Host class to create host objects
 class Host:

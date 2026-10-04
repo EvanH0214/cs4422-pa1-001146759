@@ -1,19 +1,3 @@
-# Host class to create host objects
-class Host:
-    def __init__(self, hostname, robots_txt, delay):
-        self.hostname = hostname
-        self.robots_txt = robots_txt
-        self.delay = delay
-
-    def get_hostname(self):
-        return self.hostname
-
-    def get_robots_txt(self):
-        return self.robots_txt
-
-    def get_delay(self):
-        return self.delay
-
 # import necessary libraries
 from pyclbr import Class
 import requests
@@ -26,14 +10,44 @@ from protego import Protego
 import argparse
 from urllib.parse import urlparse
 import time
+from threading import Thread
+
+# Host class to create host objects
+class Host:
+    def __init__(self, hostname, robots_txt, delay):
+        self.hostname = hostname
+        self.robots_txt = robots_txt
+        self.delay = delay
+        self.host_queue = deque()
+        self.host_remaining_delay = 0
+
+    def get_hostname(self):
+        return self.hostname
+
+    def get_robots_txt(self):
+        return self.robots_txt
+
+    def get_delay(self):
+        return self.delay
+
+    def pop_from_queue(self):
+        if self.host_queue:
+            return self.host_queue.popleft()
+
+    def push_to_queue(self, url):
+        self.host_queue.append(url)
+
+    def get_remaining_delay(self):
+        return self.host_remaining_delay
+
+    def set_remaining_delay(self, delay):
+        end_time = time.time() + delay
+        self.host_remaining_delay = end_time - time.time()
 
 # Configurations
 REQUEST_TIMEOUT = 10
 MAX_REDIRECTS = 5
 POLITENESS_DELAY = 1  
-
-# Crawler Frontier
-frontier = deque()
 
 # Visited Pages
 visited = []
@@ -52,29 +66,6 @@ headers = {
 # Corpus file (path)
 output_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
 output_path.parent.mkdir(parents=True, exist_ok=True)
-
-
-# Create a parser using argparse
-parser = argparse.ArgumentParser(description="seed url and max number of pages")
-parser.add_argument("--seed_url", type=str, help="Seed URL")
-parser.add_argument("--max_pages", type=int, help="Crawl budget")
-args = parser.parse_args()
-
-# Collect user input for seed url and max number of pages if not provided in command line
-if not args.seed_url:
-    args.seed_url = input("Enter seed URL: ")
-
-if not args.max_pages:
-    while True:
-        try:
-            args.max_pages = int(input("Enter max pages: "))
-            break
-        except ValueError:
-            print("Invalid input")
-
-# Set user input for seed url and max number of pages    
-frontier.append(args.seed_url)
-max_pages = args.max_pages
 
 # Fetch Page method
 def fetch_page(url):
@@ -116,7 +107,8 @@ def fetch_robots_txt(url):
                 else:
                     time.sleep(POLITENESS_DELAY)
                 return True
-            
+
+    # robots.txt has not been fetched for this host -- create new host object with robots.txt
     else:
         r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
 
@@ -152,8 +144,17 @@ def fetch_robots_txt(url):
             #print("robots.txt not found")
             return True
 
+
+
+
+
+
 # Retrieve next URL from frontier
 def next_url():
+
+    # Check which host has the shortes delay remaining
+    min_delay = host_list[0].get_remaining
+
     if frontier:
         temp_url = frontier.popleft()
         return temp_url
@@ -164,20 +165,36 @@ def dump_corpus(page):
     with output_path.open("a", encoding="utf-8") as corpus_file:
         corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
 
-# Retry method
+# Create a parser using argparse
+parser = argparse.ArgumentParser(description="seed url and max number of pages")
+parser.add_argument("--seed_url", type=str, help="Seed URL")
+parser.add_argument("--max_pages", type=int, help="Crawl budget")
+args = parser.parse_args()
 
 
-# Politeness floor
+# Collect user input for seed url and max number of pages if not provided in command line
+if not args.seed_url:
+    args.seed_url = input("Enter seed URL: ")
 
+if not args.max_pages:
+    while True:
+        try:
+            args.max_pages = int(input("Enter max pages: "))
+            break
+        except ValueError:
+            print("Invalid input")
 
-# Detect duplicates method
+# Set user input for seed url and max number of pages
+fetch_robots_txt(args.seed_url)
+host_list[0].push_to_queue(args.seed_url)
+max_pages = args.max_pages
 
 
 # look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
 # Crawler Loop -- Breadth First Search  
 while(True):
-    # Check if frontier is empty
-    if not frontier:
+    # Check if all host frontier is empty
+    if not any(host.host_queue for host in host_list):
         break
 
     # Check if max number of pages has been reached
@@ -223,9 +240,12 @@ while(True):
         if "kennesaw.edu" not in normalized_link:
             continue
 
-        # Add links to frontier if not already visited or in frontier
-        if normalized_link not in visited and normalized_link not in frontier:
-            frontier.append(normalized_link)
+        # Add links to correct host frontier if not already visited or in frontier
+        if normalized_link not in visited and normalized_link not in any(host.host_queue for host in host_list):
+            for host in host_list:
+                if host.get_hostname() == urlparse(normalized_link).hostname:
+                    host.push_to_queue(normalized_link)
+
 
 
     # Add current URL to visited
@@ -236,11 +256,3 @@ while(True):
 #print("\n\nFrontier: ", frontier)
 #print("\nVisited: ", visited)
 #print("\nBlocked: ", blocked)
-
-# Error Handling
-
-# DNS failures (domain doesn't resolve)
-
-# Connection timeouts (server unreachable)
-
-

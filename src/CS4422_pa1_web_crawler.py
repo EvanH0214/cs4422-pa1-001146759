@@ -10,6 +10,7 @@ from protego import Protego
 import argparse
 from urllib.parse import urlparse
 import time
+import asyncio
 
 # Host class to create host objects
 class Host:
@@ -18,7 +19,6 @@ class Host:
         self.robots_txt = robots_txt
         self.delay = delay
         self.host_queue = deque()
-        self.host_remaining_delay = 0
 
     def get_hostname(self):
         return self.hostname
@@ -36,12 +36,6 @@ class Host:
     def push_to_queue(self, url):
         self.host_queue.append(url)
 
-    def get_remaining_delay(self):
-        return self.host_remaining_delay
-
-    def set_remaining_delay(self, delay):
-        end_time = time.time() + delay
-        self.host_remaining_delay = end_time - time.time()
 
 # Configurations
 REQUEST_TIMEOUT = 10
@@ -101,13 +95,9 @@ def fetch_robots_txt(url):
                 return True
             else:
                 host = hosts
-                if host.get_delay() > POLITENESS_DELAY:
-                    time.sleep(host.get_delay)
-                else:
-                    time.sleep(POLITENESS_DELAY)
-                return True
+                time.sleep(host.get_delay())
 
-    # robots.txt has not been fetched for this host -- create new host object with robots.txt
+    # robots.txt has not been fetched for this host -- create new host object and task with robots.txt
     else:
         r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
 
@@ -115,12 +105,12 @@ def fetch_robots_txt(url):
         if r.status_code == 200:
             rp = Protego.parse(r.text)
 
-            # If robots.txt has no crawl delay, use POLITENESS_DELAY
+            # If robots.txt has no crawl delay
             if(rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0") is None):
                 host = Host(urlparse(url).hostname, rp, POLITENESS_DELAY)
                 host_list.append(host)
 
-            # if robots.txt has a crawl delay greater than POLITENESS_DELAY, use the delay
+            # if robots.txt has a crawl delay greater than POLITENESS_DELAY
             elif (rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0") > POLITENESS_DELAY):
                 host = Host(urlparse(url).hostname, rp, rp.crawl_delay(user_agent="KSU CS4422-Crawler/1.0"))
                 host_list.append(host)
@@ -130,6 +120,8 @@ def fetch_robots_txt(url):
                 host = Host(urlparse(url).hostname, rp, POLITENESS_DELAY)
                 host_list.append(host)
 
+            host_crawler = asyncio.create_task(crawl(host))
+            asyncio.run(host_crawler)
 
             if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
                 return True
@@ -140,29 +132,92 @@ def fetch_robots_txt(url):
         elif r.status_code == 404:
             host = Host(urlparse(url).hostname, None, POLITENESS_DELAY)
             host_list.append(host)
-            #print("robots.txt not found")
+            host_crawler = asyncio.create_task(crawl(host))
+            asyncio.run(host_crawler)
             return True
 
 
-
-
-
-
 # Retrieve next URL from frontier
-def next_url():
+def next_url(host):
 
-    # Check which host has the shortes delay remaining
-    min_delay = host_list[0].get_remaining
-
-    if frontier:
-        temp_url = frontier.popleft()
+    if host.host_queue:
+        temp_url = host.pop_from_queue()
         return temp_url
     return None
+
 
 # dumps the page into corpus file
 def dump_corpus(page):
     with output_path.open("a", encoding="utf-8") as corpus_file:
         corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
+
+
+# look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
+# Crawler Loop -- Breadth First Search 
+async def crawl(host): 
+    while(True):
+        # Check if all host frontier is empty
+        if not (host.host_queue):
+            break
+
+        # Check if max number of pages has been reached
+        if len(visited) >= max_pages:
+            print("Max number of pages reached.")
+            break
+
+        # Get next URL from frontier
+        current = next_url()
+
+        # Check if current URL has already been visisted
+        if current in visited:
+            continue
+
+        # Check if current URL is allowed by robots.txt
+        if fetch_robots_txt(current):
+            # Fetch current page only if allowed by robots.txt
+            page_content = fetch_page(current)
+            # Continues only if page is successfully fetched
+            if page_content is None:
+                visited.append(current)
+                continue
+            # Dumps page content into corpus
+            dump_corpus(page_content)
+        else:
+            print("Robots.txt did not allow this URL " + current)
+            blocked.append(current)
+            continue
+
+        # Scrape current page for links
+        soup = BeautifulSoup(page_content, "html.parser")
+        for link in soup.select("a", href=True):
+
+            # Normalize all links
+            normalized_link = w3lib.url.canonicalize_url(str(link.get("href")))
+
+            # Remove invalid urls
+            if not normalized_link.startswith("http"):
+                continue
+
+            # Check if link is within the kennesaw.edu domain
+            if "kennesaw.edu" not in normalized_link:
+                continue
+
+            # Add links to correct host frontier if not already visited or in frontier
+            if normalized_link not in visited:
+                if normalized_link not in any(host.host_queue):
+                    fetch_robots_txt(normalized_link)
+                else:
+                    host.push_to_queue(normalized_link)
+
+        # Add current URL to visited
+        visited.append(current)
+
+    await crawl(host)
+
+
+async def main():
+    await crawl(host_list[0])
+
 
 # Create a parser using argparse
 parser = argparse.ArgumentParser(description="seed url and max number of pages")
@@ -187,71 +242,9 @@ if not args.max_pages:
 fetch_robots_txt(args.seed_url)
 host_list[0].push_to_queue(args.seed_url)
 max_pages = args.max_pages
-
-
-# look here! -- make sure to save fetched page in a page object --> page = fetch_page(url), then dump this into corpus file
-# Crawler Loop -- Breadth First Search  
-while(True):
-    # Check if all host frontier is empty
-    if not any(host.host_queue for host in host_list):
-        break
-
-    # Check if max number of pages has been reached
-    if len(visited) >= max_pages:
-        print("Max number of pages reached.")
-        break
-
-    # Get next URL from frontier
-    current = next_url()
-
-    # Check if current URL has already been visisted
-    if current in visited:
-        continue
-
-    # Check if current URL is allowed by robots.txt
-    if fetch_robots_txt(current):
-        # Fetch current page only if allowed by robots.txt
-        page_content = fetch_page(current)
-        # Continues only if page is successfully fetched
-        if page_content is None:
-            visited.append(current)
-            continue
-        # Dumps page content into corpus
-        dump_corpus(page_content)
-    else:
-        print("Robots.txt did not allow this URL " + current)
-        blocked.append(current)
-        continue
-
-
-    # Scrape current page for links
-    soup = BeautifulSoup(page_content, "html.parser")
-    for link in soup.select("a", href=True):
-
-        # Normalize all links
-        normalized_link = w3lib.url.canonicalize_url(str(link.get("href")))
-
-        # Remove invalid urls
-        if not normalized_link.startswith("http"):
-            continue
-
-        # Check if link is within the kennesaw.edu domain
-        if "kennesaw.edu" not in normalized_link:
-            continue
-
-        # Add links to correct host frontier if not already visited or in frontier
-        if normalized_link not in visited and normalized_link not in any(host.host_queue for host in host_list):
-            for host in host_list:
-                if host.get_hostname() == urlparse(normalized_link).hostname:
-                    host.push_to_queue(normalized_link)
+asyncio.run(main())
 
 
 
-    # Add current URL to visited
-    visited.append(current)
 
-    print("\n\nVisited: ", visited)
 
-#print("\n\nFrontier: ", frontier)
-#print("\nVisited: ", visited)
-#print("\nBlocked: ", blocked)

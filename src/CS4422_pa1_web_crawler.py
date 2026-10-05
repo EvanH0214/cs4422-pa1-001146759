@@ -36,6 +36,15 @@ class Host:
     def push_to_queue(self, url):
         self.host_queue.append(url)
 
+    def set_hostname(self, hostname):
+        self.hostname = hostname
+
+    def set_robots_txt(self, robots_txt):
+        self.robots_txt = robots_txt
+
+    def set_delay(self, delay): 
+        self.delay = delay
+
 
 # Configurations
 REQUEST_TIMEOUT = 10
@@ -166,7 +175,7 @@ async def crawl(host):
             break
 
         # Get next URL from frontier
-        current = next_url()
+        current = next_url(host)
 
         # Check if current URL has already been visisted
         if current in visited:
@@ -204,7 +213,7 @@ async def crawl(host):
 
             # Add links to correct host frontier if not already visited or in frontier
             if normalized_link not in visited:
-                if normalized_link not in any(host.host_queue):
+                if normalized_link not in host.host_queue:
                     fetch_robots_txt(normalized_link)
                 else:
                     host.push_to_queue(normalized_link)
@@ -239,7 +248,8 @@ if not args.max_pages:
             print("Invalid input")
 
 # Set user input for seed url and max number of pages
-fetch_robots_txt(args.seed_url)
+first_host = Host(urlparse(args.seed_url).hostname, None, POLITENESS_DELAY)
+host_list.append(first_host)
 host_list[0].push_to_queue(args.seed_url)
 max_pages = args.max_pages
 asyncio.run(main())

@@ -56,6 +56,9 @@ class Host:
     async def push_to_queue(self, url):
             self.host_queue.append(url)
 
+    async def get_host_queue(self):
+        return self.host_queue
+
 
 # Add a url to the visited list
 async def append_to_visited(url):
@@ -156,7 +159,7 @@ async def dump_corpus(page):
 
 
 # Scrape page for links and add to host queue
-async def scrape_page(page_content, host):
+async def scrape_page(page_content, host, tg):
     soup = BeautifulSoup(page_content, "html.parser")
     for link in await soup.find_all("a", href=True):
 
@@ -177,7 +180,7 @@ async def scrape_page(page_content, host):
             new_host = create_host(normalized)
             host_list.append(new_host)
             new_host.push_to_queue(normalized)
-            asyncio.create_task(new_host)
+            crawler_task = tg.create_task(new_host)
             return False
 
 
@@ -212,7 +215,7 @@ async def normalize_url(url):
 
 
 # Main crawler loop
-async def crawl(host):
+async def crawl(host, tg):
     while host.host_queue:
 
         # Check if the max number of pages has been reached
@@ -247,7 +250,7 @@ async def crawl(host):
             continue 
 
         # Scrape current page for links and add to host frontier
-        if await scrape_page(page_content, host) is False:
+        if await scrape_page(page_content, host, tg) is False:
             continue
 
         else:
@@ -255,7 +258,8 @@ async def crawl(host):
 
 
 async def main():
-    await crawl(host_list[0])
+    async with asyncio.TaskGroup() as tg:
+        crawler_task = tg.create_task(host_list[0], tg)
 
 
 # Create a parser using argparse

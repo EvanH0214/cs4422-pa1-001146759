@@ -118,7 +118,7 @@ async def create_host(url):
 
 
 # Fetch robots.txt for a host
-async def fetch_robots_txt(url):
+def fetch_robots_txt(url):
     r = requests.get("https://" + urlparse(url).hostname + "/robots.txt", timeout = REQUEST_TIMEOUT, headers=headers)
     if r.status_code == 200:
         return Protego.parse(r.text)
@@ -180,7 +180,7 @@ async def scrape_page(page_content, host):
             new_host = create_host(normalized)
             host_list.append(new_host)
             new_host.push_to_queue(normalized)
-            asyncio.create_task(crawl(new_host))
+            asyncio.create_task(crawl(new_host, max_pages))
             await asyncio.sleep(1)
             return False
 
@@ -284,7 +284,7 @@ host = create_host(seed_url)
 host_list.append(host)
 
 async def main():
-    tasks = [asyncio.create_task(crawl(host_list[0]))]
+    tasks = [asyncio.create_task(crawl(host_list[0], max_pages))]
     await asyncio.gather(*tasks)
 
 asyncio.run(main())

@@ -34,29 +34,29 @@ output_path.parent.mkdir(parents=True, exist_ok=True)
 
 # Host class to create host objects
 class Host:
-    async def __init__(self, hostname, robots_txt, delay):
+    def __init__(self, hostname, robots_txt, delay):
         self.hostname = hostname
         self.robots_txt = robots_txt
         self.delay = delay
         self.host_queue = deque()
 
-    async def get_hostname(self):
+    def get_hostname(self):
         return self.hostname
 
-    async def get_robots_txt(self):
+    def get_robots_txt(self):
         return self.robots_txt
 
-    async def get_delay(self):
+    def get_delay(self):
         return self.delay
 
-    async def pop_from_queue(self):
+    def pop_from_queue(self):
             if self.host_queue:
                 return self.host_queue.popleft()
 
-    async def push_to_queue(self, url):
+    def push_to_queue(self, url):
             self.host_queue.append(url)
 
-    async def get_host_queue(self):
+    def get_host_queue(self):
         return self.host_queue
 
 
@@ -83,7 +83,7 @@ async def check_robots_txt(url):
 
     # Search each host object for the hostname of the url
     for host in host_list:
-        if host.get_hostname() == urlparse(url).hostname:
+        if await host.get_hostname() == urlparse(url).hostname:
             rp = await host.get_robots_txt()
             if rp.can_fetch(url, user_agent="KSU CS4422-Crawler/1.0"):
                 await asyncio.sleep(host.get_delay())  
@@ -159,7 +159,7 @@ async def dump_corpus(page):
 
 
 # Scrape page for links and add to host queue
-async def scrape_page(page_content, host, tg):
+async def scrape_page(page_content, host):
     soup = BeautifulSoup(page_content, "html.parser")
     for link in await soup.find_all("a", href=True):
 
@@ -172,7 +172,7 @@ async def scrape_page(page_content, host, tg):
         else:
             # Check if normalized url belongs to an existing host
             for host in host_list:
-                if host.get_hostname == await urlparse(normalized).hostname:
+                if await host.get_hostname() == await urlparse(normalized).hostname:
                     host.push_to_queue(normalized)
                     return True
 
@@ -180,7 +180,8 @@ async def scrape_page(page_content, host, tg):
             new_host = create_host(normalized)
             host_list.append(new_host)
             new_host.push_to_queue(normalized)
-            crawler_task = tg.create_task(new_host)
+            asyncio.create_task(crawl(new_host))
+            await asyncio.sleep(1)
             return False
 
 
@@ -215,8 +216,9 @@ async def normalize_url(url):
 
 
 # Main crawler loop
-async def crawl(host, tg):
-    while host.host_queue:
+async def crawl(host, max_pages):
+    while host.get_host_queue():
+        await asyncio.sleep(1)
 
         # Check if the max number of pages has been reached
         if len(visited) >= max_pages:
@@ -250,16 +252,11 @@ async def crawl(host, tg):
             continue 
 
         # Scrape current page for links and add to host frontier
-        if await scrape_page(page_content, host, tg) is False:
+        if await scrape_page(page_content, host) is False:
             continue
 
         else:
             visited.append(current)
-
-
-async def main():
-    async with asyncio.TaskGroup() as tg:
-        crawler_task = tg.create_task(host_list[0], tg)
 
 
 # Create a parser using argparse
@@ -285,5 +282,9 @@ max_pages = args.max_pages
 seed_url = args.seed_url
 host = create_host(seed_url)
 host_list.append(host)
+
+async def main():
+    tasks = [asyncio.create_task(crawl(host_list[0]))]
+    await asyncio.gather(*tasks)
 
 asyncio.run(main())

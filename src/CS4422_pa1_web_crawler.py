@@ -556,6 +556,8 @@ def crawl(host):
 # Main method where code execution starts
 def main():
     global MAX_PAGES
+    # Tracks the time it takes to run
+    start_time = time.perf_counter()
 
     # Create a parser using argparse
     parser = argparse.ArgumentParser(description="seed url and max number of pages")
@@ -610,6 +612,9 @@ def main():
             threadList_lock.release()
 
     print("visited: ", visited)
+    print(f"number of visited: {len(visited)}")
+    elapsed = time.perf_counter() - start_time
+    print(f"Crawl finished in {elapsed:.1f} seconds")
 
 
 main()

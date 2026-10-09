@@ -32,6 +32,9 @@ visited_lock = threading.Lock()
 blocked_lock = threading.Lock()
 threadList_lock = threading.Lock()
 corpus_lock = threading.Lock()
+pages_lock = threading.Lock()
+crawl_lock = threading.Lock()
+stats_lock = threading.Lock()
 
 
 # Create header for requests
@@ -41,6 +44,7 @@ headers = {
 
 
 # Tracking variables for artifacts
+pages_crawled = 0
 pages_fetched = 0
 urls_seen = 0
 wall_clock_seconds = 0
@@ -254,6 +258,10 @@ def fetch_page(url):
                 current_url = urljoin(current_url, location)
                 continue
 
+            # Retry if response code is retryable
+            if response.status_code == 429 or response.status_code == 503:
+                return retry(current_url)
+            
             # Print response code
             print(f"HTTP {response.status_code} while fetching: {current_url}")
             return None
@@ -325,6 +333,17 @@ def dump_corpus(page):
             corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
     finally:
         corpus_lock.release()
+
+# dump pages into corpus file
+#def dump_pages(url_cononical, status, fetched_at, title, text, out_links):
+#    word_count = len(text.split())
+
+#    pages_lock.acquire()
+#    try:
+#        with pages_path.open("a", encoding="utf-8") as pages_file:
+#            pages_file.write(json.dumps(url_cononical, status, fetched_at, title, text, word_count, out_links, content_hash, cononical_link))
+#    finally:
+#        pages_lock.release()
 
 
 # Scrape page for links and add to host queue

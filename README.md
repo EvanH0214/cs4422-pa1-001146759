@@ -2,7 +2,7 @@
 ## 0. Overview
 [placeholder]
 ## 1. Group Members
-Name: Evan Horn - netid: [placeholder] - EvanH0214
+Name: Evan Horn - netid: 001146759 - EvanH0214
 
 
 Name: Darren Ni - netid: 001153212 - WiseChimera

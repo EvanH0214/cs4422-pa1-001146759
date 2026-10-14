@@ -10,6 +10,8 @@ from collections import deque
 import time
 import w3lib.url
 import threading
+import hashlib
+from datetime import datetime, timezone
 
 # Configurations
 REQUEST_TIMEOUT = 10
@@ -31,7 +33,7 @@ host_lock = threading.Lock()
 visited_lock = threading.Lock()
 blocked_lock = threading.Lock()
 threadList_lock = threading.Lock()
-corpus_lock = threading.Lock()
+#corpus_lock = threading.Lock()
 pages_lock = threading.Lock()
 crawl_lock = threading.Lock()
 stats_lock = threading.Lock()
@@ -64,12 +66,12 @@ stats_path.parent.mkdir(parents=True, exist_ok=True)
 
 
 # Corpus file (path)
-output_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
-output_path.parent.mkdir(parents=True, exist_ok=True)
+#output_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
+#output_path.parent.mkdir(parents=True, exist_ok=True)
 
 
 # Clear corpus from previous crawl
-output_path.write_text("", encoding="utf-8")
+#output_path.write_text("", encoding="utf-8")
 pages_path.write_text("", encoding="utf-8")
 crawl_path.write_text("", encoding="utf-8")
 stats_path.write_text("", encoding="utf-8")
@@ -243,8 +245,12 @@ def fetch_page(url):
 
             # Sends request and waits 10 seconds before timeout
             response = requests.get(current_url, timeout = REQUEST_TIMEOUT, headers=headers, allow_redirects=False)
+
+            # Status for pages.jsonl
+            status = response.status_code
+
             if response.status_code == 200:
-                return response.text
+                return response.text, status
             
             # Handle HTTP redirects
             if response.status_code in (301, 302, 303, 307, 308):
@@ -254,31 +260,31 @@ def fetch_page(url):
                 location = response.headers.get("Location")
                 if not location:
                     print(f"Redirect without Location header at: {current_url}")
-                    return None
+                    return None, 0
                 current_url = urljoin(current_url, location)
                 continue
 
             # Retry if response code is retryable
             if response.status_code == 429 or response.status_code == 503:
-                return retry(current_url)
+                return retry(current_url), status
             
             # Print response code
             print(f"HTTP {response.status_code} while fetching: {current_url}")
-            return None
+            return None, status
         
         # Catch statements for errors
         except requests.exceptions.Timeout:
             print(f"Timeout while fetching, at: {current_url}")
-            return None
+            return None, status
         except requests.exceptions.SSLError:
             print(f"TLS/SSL error while fetching, at: {current_url}")
-            return None
+            return None, status
         except requests.exceptions.ConnectionError:
             print(f"Connection failure while fetching, at: {current_url}")
-            return None
+            return None, status
         except requests.exceptions.RequestException as e:
             print(f"Request error: {e} while fetching at: {current_url}")
-            return None
+            return None, status
 
 
 # Retry method
@@ -326,29 +332,36 @@ def retry(url):
 
 
 # Dumps the page into corpus file
-def dump_corpus(page):
-    corpus_lock.acquire()
-    try:
-        with output_path.open("a", encoding="utf-8") as corpus_file:
-            corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
-    finally:
-        corpus_lock.release()
+#def dump_corpus(page):
+#    corpus_lock.acquire()
+#    try:
+#        with output_path.open("a", encoding="utf-8") as corpus_file:
+#            corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
+#    finally:
+#        corpus_lock.release()
+
 
 # dump pages into corpus file
-#def dump_pages(url_cononical, status, fetched_at, title, text, out_links):
-#    word_count = len(text.split())
+def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
+    word_count = len(text.split())
+    content_hash = (hashlib.sha256((text.strip().lower()).encode("utf-8")))
+    canonical_link = None
 
-#    pages_lock.acquire()
-#    try:
-#        with pages_path.open("a", encoding="utf-8") as pages_file:
-#            pages_file.write(json.dumps(url_cononical, status, fetched_at, title, text, word_count, out_links, content_hash, cononical_link))
-#    finally:
-#        pages_lock.release()
+    record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link}
+
+    pages_lock.acquire()
+    try:
+        with pages_path.open("a", encoding="utf-8") as pages_file:
+            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False) + "\n"))
+    finally:
+        pages_lock.release()
 
 
 # Scrape page for links and add to host queue
 def scrape_page(page_content):
     soup = BeautifulSoup(page_content, "html.parser")
+
+    out_links = 0
 
     # Parse each link from the raw html
     for link in soup.find_all("a", href=True):
@@ -368,6 +381,8 @@ def scrape_page(page_content):
         if normalized is None:
             continue
 
+        out_links +=1
+        
         # Check if normalized url belongs to an existing host-- Critical Section
         host_lock.acquire()
         try:
@@ -421,6 +436,8 @@ def scrape_page(page_content):
                 create_thread(new_host)
         finally:
             host_lock.release()
+
+    return out_links
 
 
 # Normalize url and validate conditions
@@ -485,8 +502,19 @@ def crawl(host):
     global pages_crawled
     while True:
 
+        # Pages.jsonl variables
+        url_canonical = None
+        status = 0
+        fetched_at = None
+        title = None
+        text = None
+        out_links = 0
+
         # Fetch the next URL from the host's queue
         current = next_url(host)
+
+        url_canonical = current
+
         if current is None:
             break
 
@@ -509,7 +537,11 @@ def crawl(host):
         if check_robots_txt(current):
 
             # Fetch current page only if allowed by robots.txt
-            page_content = fetch_page(current)
+            page_content, status = fetch_page(current)
+
+            fetched_at = datetime.now(timezone.utc).isoformat()
+            text = page_content
+
             if page_content is None:
                 visited_lock.acquire()
                 try:
@@ -526,7 +558,7 @@ def crawl(host):
                 visited_lock.release()
             
             # Dumps page content into corpus -- add pages.jsonl dump here
-            dump_corpus(page_content)
+            #dump_corpus(page_content)
 
         # URL blocekd by robots.txt
         else:
@@ -544,13 +576,17 @@ def crawl(host):
             continue 
 
         # Scrape current page for links and add to host frontier
-        scrape_page(page_content)
+        out_links = scrape_page(page_content)
 
         # Remove url from in_progress and append to visited when done
         visited_lock.acquire() 
         in_progress.remove(current)
         visited.append(current)
         visited_lock.release()
+
+        # dump visited page into pages.jsonl
+        dump_pages(url_canonical, status, fetched_at, title, text, out_links)
+
     print(f"{threading.current_thread().name} finished.")
 
 # Main method where code execution starts

@@ -344,7 +344,7 @@ def retry(url):
 # dump pages into corpus file
 def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     word_count = len(text.split())
-    content_hash = (hashlib.sha256((text.strip().lower()).encode("utf-8")))
+    content_hash = str(hashlib.sha256((text.strip().lower()).encode("utf-8")))
     canonical_link = None
 
     record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link}
@@ -352,7 +352,7 @@ def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     pages_lock.acquire()
     try:
         with pages_path.open("a", encoding="utf-8") as pages_file:
-            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False) + "\n"))
+            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False) + "\n", indent=4))
     finally:
         pages_lock.release()
 

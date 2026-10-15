@@ -269,15 +269,19 @@ def fetch_page(url):
         # Catch statements for errors
         except requests.exceptions.Timeout:
             print(f"Timeout while fetching, at: {current_url}")
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "error", current_url, "Timeout", None)
             return None, 0
         except requests.exceptions.SSLError:
             print(f"TLS/SSL error while fetching, at: {current_url}")
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "error", current_url, "TLS/SSL error", None)
             return None, 0
         except requests.exceptions.ConnectionError:
             print(f"Connection failure while fetching, at: {current_url}")
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "error", current_url, "Connection error", None)
             return None, 0
         except requests.exceptions.RequestException as e:
             print(f"Request error: {e} while fetching at: {current_url}")
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "error", current_url, "Request error", None)
             return None, 0
 
 
@@ -312,6 +316,7 @@ def retry(url):
 
             # Retry unsuccessful 
             print(f"Retry failed for {url} with status code {response.status_code}")
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "error", url, "Retry failed", response.status_code)
             return None
         return None
 
@@ -509,7 +514,6 @@ def crawl(host):
         # Pages.jsonl variables
         url_canonical = None
         status = 0
-        fetched_at = None
         title = None
         text = None
         out_links = 0

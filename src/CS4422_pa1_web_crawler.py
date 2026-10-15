@@ -362,6 +362,19 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
         crawl_lock.release()
 
 
+# Dump stats into corpus
+def dump_stats(pages_fetched, urls_seen, wall_clock_seconds, robots_skips, random_seed):
+
+    record = [pages_fetched, urls_seen, wall_clock_seconds, robots_skips, random_seed]
+
+    stats_lock.acquire()
+    try:
+        with stats_path.open("a", encoding="utf-8") as stats_file:
+            stats_file.write(json.dumps(record, ensure_ascii=False, indent=4) + "\n")
+    finally:
+        stats_lock.release()
+
+
 # Scrape page for links and add to host queue
 def scrape_page(page_content):
     soup = BeautifulSoup(page_content, "html.parser")
@@ -419,7 +432,6 @@ def scrape_page(page_content):
         
         # Create a new host and add normalized url-- only gets here if host didn't exist
         new_host = create_host(normalized)
-        should_start_thread = False
         host_lock.acquire()
         try:
             existing_host = None
@@ -439,12 +451,9 @@ def scrape_page(page_content):
                 # adds this new host to the list + create thread
                 host_list.append(new_host)
                 new_host.push_to_queue(normalized)
-                should_start_thread = True
+                create_thread(new_host)
         finally:
             host_lock.release()
-        # create thread after releasing host lock
-        if should_start_thread:
-            create_thread(new_host)
 
     return out_links
 
@@ -566,8 +575,6 @@ def crawl(host):
             finally:
                 visited_lock.release()
             
-            # Dumps page content into corpus -- add pages.jsonl dump here
-            #dump_corpus(page_content)
 
         # URL blocekd by robots.txt
         else:
@@ -667,5 +674,7 @@ def main():
     print(f"number of visited: {len(visited)}")
     elapsed = time.perf_counter() - start_time
     print(f"Crawl finished in {elapsed:.1f} seconds")
+
+    # Add links in queues to crawl log with enqueue status
 
 main()

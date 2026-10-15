@@ -1,0 +1,105 @@
+{
+    "ts": "2026-10-15T00:40:38.725486+00:00",
+    "event": "skip",
+    "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Program+Type%7CprogramType=Bachelor",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:38.726515+00:00",
+    "event": "skip",
+    "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Program+Type%7CprogramType=Doctorate&f.Program+Type%7CprogramType=Master&f.Program+Type%7CprogramType=Specialist",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:38.727705+00:00",
+    "event": "skip",
+    "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Format%7CprogramFormat=Online",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:39.205722+00:00",
+    "event": "skip",
+    "url": "https://assistive.usablenet.com/tt/www.kennesaw.edu/",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:39.442654+00:00",
+    "event": "skip",
+    "url": "https://libguides.kennesaw.edu/copyright/",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.136188+00:00",
+    "event": "skip",
+    "url": "https://digitalcommons.kennesaw.edu/do/search/advanced/",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.334174+00:00",
+    "event": "skip",
+    "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.400843+00:00",
+    "event": "skip",
+    "url": "https://mysportsrec.kennesaw.edu/",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.412982+00:00",
+    "event": "skip",
+    "url": "https://x.com/intent/tweet/?text=Presidential+Lecture+Series%3A+Reprogramming+Your+Brain+to+Overcome+Fear+by+Kennesaw+State+University&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.522084+00:00",
+    "event": "skip",
+    "url": "https://www.linkedin.com/shareArticle?mini=true&title=Presidential+Lecture+Series%3A+Reprogramming+Your+Brain+to+Overcome+Fear&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.523457+00:00",
+    "event": "skip",
+    "url": "https://www.linkedin.com/shareArticle?mini=true&title=16th+Annual+Pumpkin+Launch&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2F16th-annual-pumpkin-launch",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.524685+00:00",
+    "event": "skip",
+    "url": "https://www.linkedin.com/shareArticle?mini=true&title=Veterans+Day+Celebration&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fveterans-day-celebration",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:40.588497+00:00",
+    "event": "skip",
+    "url": "https://calendar.google.com/calendar/render?cid=http%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar%2F1.ics",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:46.557664+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53930219287067/confirm?instance_id=53930219288092&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T00:40:47.694632+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54010314135128/confirm?instance_id=54010326276980&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}

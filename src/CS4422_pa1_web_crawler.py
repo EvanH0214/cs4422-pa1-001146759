@@ -325,7 +325,7 @@ def retry(url):
         print(f"Request error while retrying {url}: {e}")
 
 
-# dump pages into corpus file
+# Dump pages into corpus file
 def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     word_count = len(text.split())
     content_hash = str(hashlib.sha256((text.strip().lower()).encode("utf-8")))
@@ -336,9 +336,22 @@ def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     pages_lock.acquire()
     try:
         with pages_path.open("a", encoding="utf-8") as pages_file:
-            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False) + "\n", indent=4))
+            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False, indent=4) + "\n"))
     finally:
         pages_lock.release()
+
+
+# Dump crawl log into corpus 
+def dump_crawl_log(ts, event, url, failure_reason, status):
+
+    record = {"ts": ts, "event": event, "url": url, "failure_reason": failure_reason, "status": status}
+
+    crawl_lock.acquire()
+    try:
+        with crawl_path.open("a", encoding="utf-8") as crawl_file:
+            crawl_file.write(json.dumps(record, ensure_ascii=False, indent=4) + "\n")
+    finally:
+        crawl_lock.release()
 
 
 # Scrape page for links and add to host queue
@@ -522,10 +535,7 @@ def crawl(host):
 
             # Fetch current page only if allowed by robots.txt
             page_content, status = fetch_page(current)
-
-            fetched_at = datetime.now(timezone.utc).isoformat()
             text = page_content
-
             if page_content is None:
                 visited_lock.acquire()
                 try:
@@ -547,6 +557,9 @@ def crawl(host):
         # URL blocekd by robots.txt
         else:
             print("Robots.txt did not allow this URL: " + current)
+
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "skip", current, "Blocked by robots.txt", None)
+
             blocked_lock.acquire()
             try:
                 blocked.append(current)
@@ -569,7 +582,7 @@ def crawl(host):
         visited_lock.release()
 
         # dump visited page into pages.jsonl
-        dump_pages(url_canonical, status, fetched_at, title, text, out_links)
+        dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, out_links)
 
     print(f"{threading.current_thread().name} finished.")
 

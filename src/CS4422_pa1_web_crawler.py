@@ -335,8 +335,8 @@ def detect_dupes(page_content):
     # hashes the given page content 
     hashed_page = hashlib.sha256(page_content.encode("utf-8")).hexdigest()
     # return true if there's a duplicate of hashed page in the corpus, else return false
-    if output_path.exists():
-        with output_path.open("r", encoding="utf-8") as corpus_file:
+    if pages_path.exists():
+        with pages_path.open("r", encoding="utf-8") as corpus_file:
             # compares hashed page content in corpus to the current one
             for line in corpus_file:
                 stored_hash = hashlib.sha256(json.loads(line).encode("utf-8")).hexdigest()
@@ -344,6 +344,7 @@ def detect_dupes(page_content):
                     print(f"Duplicate hash: {stored_hash}\nCurrent hash: {hashed_page}")
                     return True
     return False
+
 
 # Detect duplicates method
 def detect_dupes(page_content):
@@ -706,5 +707,8 @@ def main():
     print(f"Crawl finished in {elapsed:.1f} seconds")
 
     # Add links in queues to crawl log with enqueue status
+    for host in host_list:
+        while host.has_urls():
+            dump_crawl_log(datetime.now(timezone.utc).isoformat(), "enqueue", host.pop_from_queue(), "Max pages reached", None)
 
 main()

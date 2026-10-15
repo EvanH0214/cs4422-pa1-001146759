@@ -269,21 +269,22 @@ def fetch_page(url):
         # Catch statements for errors
         except requests.exceptions.Timeout:
             print(f"Timeout while fetching, at: {current_url}")
-            return None, status
+            return None, 0
         except requests.exceptions.SSLError:
             print(f"TLS/SSL error while fetching, at: {current_url}")
-            return None, status
+            return None, 0
         except requests.exceptions.ConnectionError:
             print(f"Connection failure while fetching, at: {current_url}")
-            return None, status
+            return None, 0
         except requests.exceptions.RequestException as e:
             print(f"Request error: {e} while fetching at: {current_url}")
-            return None, status
+            return None, 0
 
 
 # Retry method
 def retry(url):
     try:
+        print("retrying fetch: " + url)
         # Request a page
         response = requests.get(url, timeout=REQUEST_TIMEOUT, headers=headers, allow_redirects=False)
 
@@ -558,6 +559,7 @@ def crawl(host):
         else:
             print("Robots.txt did not allow this URL: " + current)
 
+            # Dump urls which are skipped due to robots.txt
             dump_crawl_log(datetime.now(timezone.utc).isoformat(), "skip", current, "Blocked by robots.txt", None)
 
             blocked_lock.acquire()
@@ -581,7 +583,10 @@ def crawl(host):
         visited.append(current)
         visited_lock.release()
 
-        # dump visited page into pages.jsonl
+        # Dump links which are successfully fetched
+        dump_crawl_log(datetime.now(timezone.utc).isoformat(), "fetch", current, "Successfully fetched", status)
+
+        # Dump visited page into pages.jsonl
         dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, out_links)
 
     print(f"{threading.current_thread().name} finished.")

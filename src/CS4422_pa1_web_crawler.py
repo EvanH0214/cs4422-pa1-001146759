@@ -330,6 +330,20 @@ def retry(url):
     except requests.exceptions.RequestException as e:
         print(f"Request error while retrying {url}: {e}")
 
+# Detect duplicates method
+def detect_dupes(page_content):
+    # hashes the given page content 
+    hashed_page = hashlib.sha256(page_content.encode("utf-8")).hexdigest()
+    # return true if there's a duplicate of hashed page in the corpus, else return false
+    if output_path.exists():
+        with output_path.open("r", encoding="utf-8") as corpus_file:
+            # compares hashed page content in corpus to the current one
+            for line in corpus_file:
+                stored_hash = hashlib.sha256(json.loads(line).encode("utf-8")).hexdigest()
+                if stored_hash == hashed_page:
+                    print(f"Duplicate hash: {stored_hash}\nCurrent hash: {hashed_page}")
+                    return True
+    return False
 
 # Detect duplicates method
 def detect_dupes(page_content):

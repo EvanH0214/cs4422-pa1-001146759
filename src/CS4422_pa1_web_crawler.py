@@ -329,7 +329,9 @@ def retry(url):
 # Dump pages into corpus file
 def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     word_count = len(text.split())
-    content_hash = str(hashlib.sha256((text.strip().lower()).encode("utf-8")))
+    normalized_text = " ".join(text.lower().split())
+    # generate sha-256 hash as hexadecimal string
+    content_hash = hashlib.sha256((normalized_text.strip().lower()).encode("utf-8")).hexdigest()
     canonical_link = None
 
     record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link}
@@ -337,7 +339,7 @@ def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     pages_lock.acquire()
     try:
         with pages_path.open("a", encoding="utf-8") as pages_file:
-            pages_file.write(json.dumps(json.dumps(record, ensure_ascii=False, indent=4) + "\n"))
+            pages_file.write(json.dumps(record, ensure_ascii=False) + "\n")
     finally:
         pages_lock.release()
 
@@ -412,6 +414,7 @@ def scrape_page(page_content):
         
         # Create a new host and add normalized url-- only gets here if host didn't exist
         new_host = create_host(normalized)
+        should_start_thread = False
         host_lock.acquire()
         try:
             existing_host = None
@@ -431,9 +434,12 @@ def scrape_page(page_content):
                 # adds this new host to the list + create thread
                 host_list.append(new_host)
                 new_host.push_to_queue(normalized)
-                create_thread(new_host)
+                should_start_thread = True
         finally:
             host_lock.release()
+        # create thread after releasing host lock
+        if should_start_thread:
+            create_thread(new_host)
 
     return out_links
 
@@ -536,7 +542,6 @@ def crawl(host):
 
             # Fetch current page only if allowed by robots.txt
             page_content, status = fetch_page(current)
-            text = page_content
             if page_content is None:
                 visited_lock.acquire()
                 try:
@@ -544,6 +549,11 @@ def crawl(host):
                 finally:
                     visited_lock.release()
                 continue
+            soup = BeautifulSoup(page_content, "html.parser")
+            # stores title extracted from HTML
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            # stores text extracted from HTML
+            text = soup.get_text(" ", strip=True)
 
             # Successfully crawled a page
             visited_lock.acquire()
@@ -594,6 +604,8 @@ def crawl(host):
 # Main method where code execution starts
 def main():
     global MAX_PAGES
+    # Tracks the time it takes to run
+    start_time = time.perf_counter()
 
     # Create a parser using argparse
     parser = argparse.ArgumentParser(description="seed url and max number of pages")
@@ -648,6 +660,8 @@ def main():
             threadList_lock.release()
 
     print("visited: ", visited)
-
+    print(f"number of visited: {len(visited)}")
+    elapsed = time.perf_counter() - start_time
+    print(f"Crawl finished in {elapsed:.1f} seconds")
 
 main()

@@ -1,105 +1,3920 @@
 {
-    "ts": "2026-10-15T00:40:38.725486+00:00",
+    "ts": "2026-10-15T01:13:08.376048+00:00",
     "event": "skip",
     "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Program+Type%7CprogramType=Bachelor",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:38.726515+00:00",
+    "ts": "2026-10-15T01:13:08.377793+00:00",
     "event": "skip",
     "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Program+Type%7CprogramType=Doctorate&f.Program+Type%7CprogramType=Master&f.Program+Type%7CprogramType=Specialist",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:38.727705+00:00",
+    "ts": "2026-10-15T01:13:08.378156+00:00",
     "event": "skip",
     "url": "https://programfinder.kennesaw.edu/s/search.html?collection=kennesaw-program-finder-meta&f.Format%7CprogramFormat=Online",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:39.205722+00:00",
-    "event": "skip",
-    "url": "https://assistive.usablenet.com/tt/www.kennesaw.edu/",
-    "failure_reason": "Blocked by robots.txt",
-    "status": null
-}
-{
-    "ts": "2026-10-15T00:40:39.442654+00:00",
+    "ts": "2026-10-15T01:13:08.687388+00:00",
     "event": "skip",
     "url": "https://libguides.kennesaw.edu/copyright/",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.136188+00:00",
+    "ts": "2026-10-15T01:13:09.563643+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:09.623192+00:00",
+    "event": "skip",
+    "url": "https://assistive.usablenet.com/tt/www.kennesaw.edu/",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:09.627174+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:09.835985+00:00",
+    "event": "fetch",
+    "url": "https://azindex.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:10.016934+00:00",
+    "event": "fetch",
+    "url": "https://owllife.kennesaw.edu/events",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:12.034997+00:00",
+    "event": "fetch",
+    "url": "https://maps.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:12.428994+00:00",
+    "event": "fetch",
+    "url": "https://ksumail.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:12.513246+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:12.520455+00:00",
     "event": "skip",
     "url": "https://digitalcommons.kennesaw.edu/do/search/advanced/",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.334174+00:00",
+    "ts": "2026-10-15T01:13:13.261179+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/apply.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:13.383303+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:15.181448+00:00",
+    "event": "fetch",
+    "url": "https://owlexpress.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:15.773592+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/communities.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:16.384608+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/visit.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:16.522471+00:00",
     "event": "skip",
     "url": "https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.400843+00:00",
+    "ts": "2026-10-15T01:13:18.434624+00:00",
     "event": "skip",
     "url": "https://mysportsrec.kennesaw.edu/",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.412982+00:00",
+    "ts": "2026-10-15T01:13:18.502448+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:18.923530+00:00",
     "event": "skip",
     "url": "https://x.com/intent/tweet/?text=Presidential+Lecture+Series%3A+Reprogramming+Your+Brain+to+Overcome+Fear+by+Kennesaw+State+University&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.522084+00:00",
+    "ts": "2026-10-15T01:13:19.048444+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/artificial-intelligence-ai/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:19.243496+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/about.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:19.971470+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/give.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:20.266213+00:00",
+    "event": "fetch",
+    "url": "https://degreeworks.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:20.412446+00:00",
+    "event": "fetch",
+    "url": "http://bookstore.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:20.806208+00:00",
     "event": "skip",
     "url": "https://www.linkedin.com/shareArticle?mini=true&title=Presidential+Lecture+Series%3A+Reprogramming+Your+Brain+to+Overcome+Fear&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:40.523457+00:00",
-    "event": "skip",
-    "url": "https://www.linkedin.com/shareArticle?mini=true&title=16th+Annual+Pumpkin+Launch&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2F16th-annual-pumpkin-launch",
-    "failure_reason": "Blocked by robots.txt",
-    "status": null
+    "ts": "2026-10-15T01:13:21.464455+00:00",
+    "event": "fetch",
+    "url": "https://kennesaw.edu/mobile/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
 }
 {
-    "ts": "2026-10-15T00:40:40.524685+00:00",
-    "event": "skip",
-    "url": "https://www.linkedin.com/shareArticle?mini=true&title=Veterans+Day+Celebration&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fveterans-day-celebration",
-    "failure_reason": "Blocked by robots.txt",
-    "status": null
+    "ts": "2026-10-15T01:13:21.636327+00:00",
+    "event": "fetch",
+    "url": "https://vpn.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
 }
 {
-    "ts": "2026-10-15T00:40:40.588497+00:00",
+    "ts": "2026-10-15T01:13:22.552573+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/business-management/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:22.703212+00:00",
     "event": "skip",
     "url": "https://calendar.google.com/calendar/render?cid=http%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar%2F1.ics",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:46.557664+00:00",
+    "ts": "2026-10-15T01:13:24.671569+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/cgi/myaccount.cgi?context=",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:25.184865+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/calendar.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:25.421251+00:00",
+    "event": "skip",
+    "url": "https://libraryh3lp.com/chat/referenceksu@chat.libraryh3lp.com?referer=https%3A%2F%2Fwww.kennesaw.edu%2Flibrary%2F&skin=29831",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:25.563454+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/computer-aided-design-cad/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:26.262137+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/faculty-staff/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:27.877796+00:00",
+    "event": "fetch",
+    "url": "https://artspurchase.kennesaw.edu/Events",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:28.249517+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/faculty",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:28.356201+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/construction/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:28.371679+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:28.599789+00:00",
+    "event": "fetch",
+    "url": "http://service.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:28.647129+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:29.951240+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:30.133139+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:30.207789+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/culinary-arts/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:30.249255+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/student",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:30.945604+00:00",
+    "event": "fetch",
+    "url": "https://bookstore.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:30.971214+00:00",
+    "event": "fetch",
+    "url": "https://service.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:31.451946+00:00",
+    "event": "fetch",
+    "url": "https://diversity.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:31.491539+00:00",
+    "event": "fetch",
+    "url": "https://dga.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:31.923515+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-data-analysis",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:32.069881+00:00",
+    "event": "skip",
+    "url": "https://go.openathens.net/redirector/kennesaw.edu?url=https%3A%2F%2Fdigitalcampus.swankmp.net%2Fkennesaw510320",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:32.071320+00:00",
+    "event": "fetch",
+    "url": "https://library.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:32.115430+00:00",
+    "event": "fetch",
+    "url": "http://netid.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:32.152445+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/university-initiatives/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:32.183463+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/data-science-and-analytics/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:32.582919+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/open",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:33.121960+00:00",
+    "event": "fetch",
+    "url": "http://uits.kennesaw.edu/netaccess/gettingstarted.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:33.334372+00:00",
+    "event": "fetch",
+    "url": "https://orientation.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:33.789893+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-sales",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:33.942846+00:00",
+    "event": "fetch",
+    "url": "https://fiscalservices.kennesaw.edu/bursar/tuition-fees/tuition-fees.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:33.978184+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/faculty-staff/human-resources/careers/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:34.029644+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/drone-pilot-certification/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:34.353576+00:00",
+    "event": "fetch",
+    "url": "https://communityengagement.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:34.673157+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/publishing",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:34.932014+00:00",
+    "event": "fetch",
+    "url": "https://epay.kennesaw.edu/C20923_tsa/web/login.jsp",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:35.260449+00:00",
+    "event": "fetch",
+    "url": "https://commencement.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:35.914489+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:35.980183+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/faculty-staff/academic-affairs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:36.036042+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/finance/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:36.073262+00:00",
+    "event": "fetch",
+    "url": "https://sustainability.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:36.618696+00:00",
+    "event": "fetch",
+    "url": "https://learnonline.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:36.829975+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/ksucommunities",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:36.949710+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:37.826690+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:37.938886+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/healthcare/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:38.275853+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/academics/global-education/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:38.718776+00:00",
+    "event": "fetch",
+    "url": "https://www.atlassian.com/software/statuspage?utm_campaign=status.kennesaw.edu&utm_content=SP-notifications&utm_medium=powered-by&utm_source=inapp",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:38.733603+00:00",
+    "event": "fetch",
+    "url": "http://news.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:38.951076+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.009231+00:00",
+    "event": "fetch",
+    "url": "https://visit.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.054664+00:00",
+    "event": "fetch",
+    "url": "https://ksuhousing.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.206250+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/history.atom",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.272843+00:00",
+    "event": "fetch",
+    "url": "https://student-apps.kennesaw.edu/apps/directory",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.565680+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.862783+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.932959+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/marketing/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.976978+00:00",
+    "event": "fetch",
+    "url": "http://directory.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:39.982429+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:40.634406+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/presidential-lecture-series",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:40.641228+00:00",
+    "event": "fetch",
+    "url": "https://ksufedhigh.kennesaw.edu/adfs/ls/idpinitiatedsignon.aspx?LoginToRP=https%3A%2F%2Fksu.tririga.com%2Fibm%2Fsaml20%2FsamlSSO",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:40.641865+00:00",
     "event": "skip",
     "url": "https://calendar.kennesaw.edu/event/53930219287067/confirm?instance_id=53930219288092&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
     "failure_reason": "Blocked by robots.txt",
     "status": null
 }
 {
-    "ts": "2026-10-15T00:40:47.694632+00:00",
+    "ts": "2026-10-15T01:13:40.964552+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/history.rss",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.043032+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/registrar/academic-calendars.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.368319+00:00",
+    "event": "fetch",
+    "url": "https://registrar.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.415834+00:00",
+    "event": "fetch",
+    "url": "https://advising.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.459941+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/research",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.522467+00:00",
+    "event": "fetch",
+    "url": "https://app-center.kennesaw.edu/apps/directory",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.674053+00:00",
+    "event": "fetch",
+    "url": "https://bookstore.kennesaw.edu/womens-apparel/womens-t-shirts-tops",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.762882+00:00",
+    "event": "fetch",
+    "url": "https://intweb.kennesaw.edu/hr/public/how-to-update-employee-directory-fields.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.853672+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/vibe-coding",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:41.981246+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/paralegal-certificates/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:42.113206+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/habaza/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:42.597860+00:00",
+    "event": "fetch",
+    "url": "https://bes-owlexpress.kennesaw.edu/BannerExtensibility/customPage/page/USGTransferArticulation",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:42.640721+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/16th-annual-pumpkin-launch",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:42.643186+00:00",
     "event": "skip",
     "url": "https://calendar.kennesaw.edu/event/54010314135128/confirm?instance_id=54010326276980&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
     "failure_reason": "Blocked by robots.txt",
     "status": null
+}
+{
+    "ts": "2026-10-15T01:13:42.889089+00:00",
+    "event": "fetch",
+    "url": "https://hr.kennesaw.edu/careers.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:42.973346+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/library/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:43.102535+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/incidents/tmcmmjrczqm0",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:43.535236+00:00",
+    "event": "fetch",
+    "url": "https://forgotpassword.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:43.566897+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/help",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:43.841293+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/project-management/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:43.908253+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/patient-care/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.138095+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/veterans-day-celebration",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.155383+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54230968772099/confirm?instance_id=54230968773124&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:44.237611+00:00",
+    "event": "fetch",
+    "url": "https://research.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.244698+00:00",
+    "event": "fetch",
+    "url": "https://intweb.kennesaw.edu/hr/all_campus/dept-hierarchy-one-page-summary.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.622498+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/academics/academic-advising/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.643625+00:00",
+    "event": "fetch",
+    "url": "https://testing.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:44.955497+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/incidents/g7l1qjq8jtd3",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:45.055292+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/recent_additions.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:45.499127+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:45.600436+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/technology-cybersecurity/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:45.811489+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/calendar/1.xml",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:46.058398+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/habbott/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:46.408265+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/coles/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:46.457754+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/activity.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:46.825454+00:00",
+    "event": "fetch",
+    "url": "https://status.kennesaw.edu/incidents/ltkq5p0j5p09",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:47.110702+00:00",
+    "event": "fetch",
+    "url": "https://studenthealth.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:47.165746+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:47.720676+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/online-courses/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:47.879959+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/jabern21/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:48.127067+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/arts/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:48.777558+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/zieglerphotos/180",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:48.806589+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/calendar",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:48.821395+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new?cohort_key=aip_1_101926&section_uid=S-MAQ7KSVWHW",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:48.822341+00:00",
+    "event": "skip",
+    "url": "https://digitalcommons.kennesaw.edu/do/search/advanced/?fq=virtual_ancestor_link%3A%22https%3A%2F%2Fdigitalcommons.kennesaw.edu%22",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:49.039171+00:00",
+    "event": "fetch",
+    "url": "https://counseling.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:49.446118+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/coming-soon/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:49.830379+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/cacm/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:49.930129+00:00",
+    "event": "fetch",
+    "url": "http://csm.kennesaw.edu/chemistry-biochemistry/events/chemistry-olympiad.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.112283+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/436867",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.234379+00:00",
+    "event": "fetch",
+    "url": "https://sportsrec.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.249117+00:00",
+    "event": "fetch",
+    "url": "https://plu.mx/plum/a/?repo_url=https%3A%2F%2Fdigitalcommons.kennesaw.edu%2Fzieglerphotos%2F180",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.550908+00:00",
+    "event": "fetch",
+    "url": "https://you.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.570201+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/announcements.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:50.809206+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.494619+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/browse/places",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.569973+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/bagwell/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.588537+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/pachar/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.726686+00:00",
+    "event": "fetch",
+    "url": "https://wellness.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.759293+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/catalog/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:51.982823+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/faq.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:52.111167+00:00",
+    "event": "fetch",
+    "url": "https://bookstore.kennesaw.edu/mens-apparel/mens-t-shirts-tops",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:52.433424+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new?cohort_key=aip_1_110226&section_uid=S-ZVNH4AAFSV",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:52.724964+00:00",
+    "event": "fetch",
+    "url": "https://mediaspace.kennesaw.edu/playlist/details/1_t4g2jib3",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:53.201231+00:00",
+    "event": "fetch",
+    "url": "https://cyaar.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:53.586000+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/lackert/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:53.628297+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/submit_research.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:53.629566+00:00",
+    "event": "skip",
+    "url": "https://digitalcommons.kennesaw.edu/do/discipline_browser/disciplines",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:53.828185+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/ccse/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:54.165355+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new?cohort_key=aip_1_110226&section_uid=S-HDLV34W8QP",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:54.270481+00:00",
+    "event": "fetch",
+    "url": "http://pslsamp.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:54.301715+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/catalog/view/professional-annual-catalog/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:54.552343+00:00",
+    "event": "fetch",
+    "url": "https://care.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:54.824525+00:00",
+    "event": "fetch",
+    "url": "https://pncportal.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:55.182116+00:00",
+    "event": "fetch",
+    "url": "https://mediaspace.kennesaw.edu/resources",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:55.366229+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aadam224/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:55.426941+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/radow/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:56.082245+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new?cohort_key=aip_1_120726&section_uid=S-FZUPHSLNYJ",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:56.361589+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/browse/departments",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:56.439801+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/create",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:57.192298+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/discoveru/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:57.405112+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/fadams/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:57.809261+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/csm/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:58.499653+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/registrations/new?cohort_key=aip_1_120726&section_uid=S-PMP9KNNB77",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:58.846208+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/pumpkin-launch-and-alumni-scrappy-hour",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:59.013474+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54116412579947/confirm?instance_id=54116412581996&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:13:59.103789+00:00",
+    "event": "fetch",
+    "url": "https://dining.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:59.430498+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/tadams71/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:13:59.951733+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/graduate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:00.549357+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/openhouse/cpe-expo/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:00.578809+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-data-analysis/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:00.623495+00:00",
+    "event": "fetch",
+    "url": "https://events.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:00.976551+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/437859",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:01.303384+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/ksu-alumni-association-homecoming-tailgate-7185",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:01.433301+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/fadams15/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:01.833240+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/honors/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:02.743481+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-data-analysis/registrations/new?cohort_key=aid_1_110226&section_uid=S-L2H6NUT52B",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:02.804728+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/advertise-and-sponsor/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:03.664068+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/tadam145/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:03.725143+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/authors.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:04.027422+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/spceet/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:04.057093+00:00",
+    "event": "skip",
+    "url": "https://twitter.com/intent/tweet/?text=Owl%27s+Nest+by+Kennesaw+State+University&url=https%3A%2F%2Fcalendar.kennesaw.edu%2Fowls_nest",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:04.323565+00:00",
+    "event": "fetch",
+    "url": "https://parking.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:04.757602+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-data-analysis/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:04.803891+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/career-development-resources/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:05.081867+00:00",
+    "event": "fetch",
+    "url": "https://taloncard.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:05.109073+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/owls_nest",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:05.111387+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53984596966242/confirm?instance_id=53984596967267&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:05.181999+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/cwl/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:05.447508+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/parents-family/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:05.632352+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/eadams55/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.058334+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/wellstar/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.375316+00:00",
+    "event": "fetch",
+    "url": "https://talon.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.433516+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/business-analytics",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.465333+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/catalogs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.500867+00:00",
+    "event": "fetch",
+    "url": "https://campusservices.kennesaw.edu/visitors.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.706651+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/kennesaw-state-university-football-vs-delaware-7642",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:06.707750+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/52759728711435/confirm?instance_id=52759728712461&return=https%3A%2F%2Fcalendar.kennesaw.edu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:06.745962+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/faculty/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:07.102184+00:00",
+    "event": "fetch",
+    "url": "https://sportspark.kennesaw.edu/facilities/owls-nest.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:07.636914+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/honors/admission/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:08.076699+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-sales/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:08.196651+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/publishing/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:08.246546+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/financial-assistance/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:08.903735+00:00",
+    "event": "fetch",
+    "url": "https://campusservices.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:08.922447+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/madam104/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:09.032503+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/department/human_resources/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:09.218420+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/fiscal-services/bursar/tuition-fees/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:09.588138+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/open/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:09.605026+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-sales/registrations/new?cohort_key=ais_1_110226&section_uid=S-ZZZGR9V9YG",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:09.888275+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/faqs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:10.276430+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-news/wingspan.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:10.673516+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/alumni-friends/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:10.797101+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aadebayo/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:10.883985+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/financial-aid/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:10.998389+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/research/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:11.233865+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/department/university_information_technology_services_uits",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:11.256881+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-sales/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:11.525671+00:00",
+    "event": "fetch",
+    "url": "https://bagwell.kennesaw.edu/departments/smge/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:11.558129+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/about-cpe/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:11.713726+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/437856",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.144735+00:00",
+    "event": "fetch",
+    "url": "https://homecoming.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.502031+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-networks/latino-alumni-society/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.530340+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/student/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.584909+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/registrar/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.724336+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/community-business/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.741749+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/madebay2/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:12.855435+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:13.219009+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:13.345792+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/department/office_of_research/calendar",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:13.590193+00:00",
+    "event": "fetch",
+    "url": "https://giving.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:13.746683+00:00",
+    "event": "fetch",
+    "url": "https://bagwell.kennesaw.edu/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.183117+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/wellbeing/counseling/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.367503+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/training",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.469334+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-networks/black-alumni-society/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.533601+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation/registrations/new?cohort_key=aiw_1_101926&section_uid=S-KV5MDGVJQS",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.775341+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/sadhika3/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:14.868620+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/contact/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:15.367653+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/convocation_center",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:15.369950+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/calendar/day?days=92&event_types%5B%5D=31369705385273&experience=virtual&order=date",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:15.424419+00:00",
+    "event": "fetch",
+    "url": "https://foundation.kennesaw.edu/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:15.816338+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/accessibility.html",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:15.928363+00:00",
+    "event": "fetch",
+    "url": "https://bagwell.kennesaw.edu/units/all/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:16.247820+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:16.517976+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-networks/marching-owls/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:16.625827+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/instructor-application/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:16.711996+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/dadhikar/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:16.838351+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/dean-of-students/student-disability-services/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.340739+00:00",
+    "event": "fetch",
+    "url": "https://foundation.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.586219+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/educ",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.795079+00:00",
+    "event": "fetch",
+    "url": "https://president.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.822853+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/calendar/day/2026/10/15",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.841382+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation/registrations/new?cohort_key=aiw_1_110226&section_uid=S-VSZ2NM7FM6",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:17.845875+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53930219287067/confirm?instance_id=53930219288092&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fpresidential-lecture-series",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:17.846678+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/photo/53930683637478",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:18.203035+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:18.587498+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-networks/southern-polytechnic-society/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:18.785496+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aaditya/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:18.856096+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/about/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.250726+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/registrar/academic-calendars/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.297307+00:00",
+    "event": "fetch",
+    "url": "https://academicaffairs.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.415905+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/outstandingBCOE",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.451925+00:00",
+    "event": "fetch",
+    "url": "http://owlaccommodate.kennesaw.edu/students",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.552772+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-automation/registrations/new?cohort_key=aiw_1_120726&section_uid=S-R2VP9YVF25",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:19.784885+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/ksu_dance_theater_on_the_marietta_campus_942",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:20.427281+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/alumni-networks/alumni-young-professionals/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:20.617562+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/nadkins3/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:20.935504+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/news/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:20.961068+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/wellstar/academics/academy/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:20.989809+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/olli/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:21.099660+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:21.121743+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/edl",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:21.301854+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/presidential-lecture-series.ics",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:21.302842+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/search?what=events",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:21.303252+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/search?what=places",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:22.165063+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/437861",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.204171+00:00",
+    "event": "fetch",
+    "url": "https://alumni.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.420393+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/jadkiss1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.662586+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/student-resources/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.690665+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/president/strategic-plan/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.769416+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/coles/academics/accountancy/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:22.787699+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new?cohort_key=aihr_1_101926&section_uid=S-UH5HZTPUXJ",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:23.150426+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/educleaddoc_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:23.553402+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/calendar/day/2026/10/29",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:23.554547+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54010314135128/confirm?instance_id=54010326276980&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2F16th-annual-pumpkin-launch",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:23.555026+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/photo/54010314089047",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:24.183162+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/sagan3/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:24.247531+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/business-management/project-management-certificate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:24.294510+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/alumni/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:24.408089+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/fiscal-services/procurement-payment-services/accounts-payable/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:24.465702+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:25.059650+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/16th-annual-pumpkin-launch.ics",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:25.077583+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/teachleaddoc_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:25.923665+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/culinary-apprenticeship-certificate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:25.960250+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/dahner/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:25.999076+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new?cohort_key=aihr_1_110226&section_uid=S-FWZHCULSQ2",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:26.284250+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/administration-division/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:26.562894+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/calendar/day/2026/11/11",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:26.564147+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54230968772099/confirm?instance_id=54230968773124&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fevent%2Fveterans-day-celebration",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:26.564546+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/photo/54231092134993",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:27.566453+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/patient-care/medical-assisting-certificate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:27.585942+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new?cohort_key=aihr_1_120726&section_uid=S-9QN9YLJ6KT",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:27.814495+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/nakhtar/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:27.859782+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/policies-governance/administrators-council/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:28.420726+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/edl_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:28.428780+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/conferences/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:29.136601+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:29.269343+00:00",
+    "event": "fetch",
+    "url": "https://facultydevelopment.kennesaw.edu/scholarly-teaching/sotl-summit/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:29.389772+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/academics/global-education/center-for-africana-studies/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:29.545358+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/madewuy1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:29.859094+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/veterans-day-celebration.ics",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:30.100267+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/president/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:30.335338+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/eece",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:30.723750+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing/registrations/new?cohort_key=aim_1_110226&section_uid=S-C54CY4WR6T",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:30.870512+00:00",
+    "event": "skip",
+    "url": "http://pinterest.com/pin/create/button/?description=Starting+a+career+in+the+legal+field+takes+commitment%2C+but+it+shouldn%26%238217%3Bt+require+you+to+put+the+rest+of+your+life+on+hold.+That%26%238217%3Bs+why+KSU+Community+and+Professional+Education+now+offers+the+Paralegal+Certificate+in+a+self-paced+online+asynchronous+%26hellip%3B+&media=https%3A%2F%2Fcpe.kennesaw.edu%2Fwp-content%2Fuploads%2F2026%2F09%2Fparalegal-asynch-comparison-blog.jpeg&url=https%3A%2F%2Fcpe.kennesaw.edu%2Fblog%2F2026%2F09%2F30%2Fself-paced-online-asynchronous-paralegal-certificate-at-ksu%2F",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:30.874845+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2026/09/30/self-paced-online-asynchronous-paralegal-certificate-at-ksu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:30.905550+00:00",
+    "event": "fetch",
+    "url": "https://lcya.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:31.138807+00:00",
+    "event": "fetch",
+    "url": "http://campus.kennesaw.edu/policies-governance/american-association-university-professors/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:31.200525+00:00",
+    "event": "fetch",
+    "url": "https://education.kennesaw.edu/tqp/sites/education.kennesaw.edu.tqp/files/Perspective%20of%20Interns%20and%20CTs%20Spring%202012.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:31.393432+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aalshena/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:31.592076+00:00",
+    "event": "fetch",
+    "url": "https://plus.google.com/share?title=New%3A+Self-Paced+Online+Asynchronous+Paralegal+Certificate+at+KSU&url=https%3A%2F%2Fcpe.kennesaw.edu%2Fblog%2F2026%2F09%2F30%2Fself-paced-online-asynchronous-paralegal-certificate-at-ksu%2F",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:31.618664+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/president/cabinet.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:32.099741+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/eecedoc_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:32.321582+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing/reimbursement",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:32.485866+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2026/09/09/certified-professional-life-coach-training-and-career-guide/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:32.659348+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/436374",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:33.089118+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/malhaik/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:33.154541+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/foundation/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:33.403761+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/radow/degrees-programs/graduate/ma-american-studies/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:33.884084+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing/registrations/new?cohort_key=aim_1_120726&section_uid=S-JYQAQWNYVB",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:33.999326+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/eece_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:34.169354+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2026/08/26/credential-stacking-and-how-can-it-grow-your-career/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:34.851970+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/ralamad/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:34.972486+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/academics/global-education/year-of/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:35.114324+00:00",
+    "event": "fetch",
+    "url": "https://mayaproject.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:35.432152+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/ai-for-marketing/registrations/new?cohort_key=aim_1_010527&section_uid=S-QMWRWPFBV4",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:35.797625+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/ined",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:35.831615+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2026/06/10/celebrating-kia-redwines-gsma-life-membership-award/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:36.563509+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/ealbrec1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:36.593260+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/cacm/academics/architecture/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:36.926007+00:00",
+    "event": "fetch",
+    "url": "https://advance.cpe.kennesaw.edu/vibe-coding/registrations/new",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:37.479068+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/discounts/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:37.592854+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/speceddoc_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:38.207706+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/arts/academics/visual-arts/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:38.424088+00:00",
+    "event": "fetch",
+    "url": "https://coles.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:39.194966+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/scholarships/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:39.227864+00:00",
+    "event": "fetch",
+    "url": "https://cacm.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:39.234588+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aalex100/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:39.391290+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/ined_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:39.830317+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/radow/degrees-programs/undergraduate/ba-asian-studies/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:40.989073+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/military/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:41.102314+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/calendar/three_months/2026/7/14",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:41.103353+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/calendar/three_months/2027/1/14",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:41.166083+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/rali/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:41.246138+00:00",
+    "event": "fetch",
+    "url": "https://kennesawtower.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:41.285026+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/mge",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:41.433910+00:00",
+    "event": "fetch",
+    "url": "https://ccse.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:41.549143+00:00",
+    "event": "fetch",
+    "url": "http://campus.kennesaw.edu/policies-governance/provost-athletics-oversight-council/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:42.246034+00:00",
+    "event": "fetch",
+    "url": "https://radow.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:42.533893+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/fall-symposium-of-student-scholars-in-person-poster-visual-display-presentations-and-all-virtual-presentations-abstracts-due",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:42.535025+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53418863171820/confirm?instance_id=53418863171821&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:42.635037+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/corporate_learning/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:42.996358+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/kalme/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:43.209534+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/dean-of-students/behavioral-response-team.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:43.251705+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/436453",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:43.330998+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/eddsmge",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:43.770632+00:00",
+    "event": "fetch",
+    "url": "https://graduate.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:44.180930+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/commencement-celebration-5049",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:44.182271+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54072316457588/confirm?instance_id=54072316459638&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:44.767684+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/openhouse/cpe-expo",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:44.866950+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/nalvesso/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:44.981617+00:00",
+    "event": "fetch",
+    "url": "https://honors.kennesaw.edu/honors-admissions/eligibility.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:45.316853+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/mge_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:45.696436+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/academics/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:45.787597+00:00",
+    "event": "fetch",
+    "url": "https://radow.kennesaw.edu/wlc/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:45.951450+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/careers/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:46.377511+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/privacy-statement/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:46.421172+00:00",
+    "event": "fetch",
+    "url": "https://engineering.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:46.458348+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/education-abroad-fair-marietta",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:46.669981+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/talviar/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:47.121104+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/intruced",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:47.159534+00:00",
+    "event": "fetch",
+    "url": "https://honors.kennesaw.edu/programs/overview.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:47.471756+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/degrees-programs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:47.658430+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/housing/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:48.297688+00:00",
+    "event": "fetch",
+    "url": "https://radow.kennesaw.edu/wlc/programs/ba-asian-studies.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:48.494616+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/mamirgho/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:48.759900+00:00",
+    "event": "fetch",
+    "url": "https://wellstarcollege.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:48.934183+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/instruceddoc_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:49.103831+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/ksu-online/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:49.250283+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/dining/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:49.391468+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/joe_mack_wilson_student_center",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:49.398346+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/policies/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:49.401303+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/52747025345097/confirm?instance_id=52747025345098&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:50.258222+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/san2/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:50.464699+00:00",
+    "event": "fetch",
+    "url": "https://radow.kennesaw.edu/wlc/programs/bamlc.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:50.614050+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/double-owl/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:50.906843+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/wellbeing/university-recreation/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:51.115139+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/important-dates/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:51.524327+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/kennesaw-state-university-2026-graduate-fair",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:51.525948+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53693113976714/confirm?instance_id=53693113976715&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:51.817787+00:00",
+    "event": "fetch",
+    "url": "http://sds.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:51.827131+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/ist_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:52.127755+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/vanand1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:52.172547+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/admissions/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:52.499040+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/student-health/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:52.763330+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/contact/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:53.148191+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/building-your-target-employer-list-a-smarter-way-to-job-search",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:53.149700+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53427852536128/confirm?instance_id=53427852537153&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:53.205606+00:00",
+    "event": "fetch",
+    "url": "http://web.a.ebscohost.com.proxy.kennesaw.edu/ehost/pdfviewer/pdfviewer?hid=4204&sid=938cdabb-abb0-4ca5-a55c-ee6aa4cda438%40sessionmgr4002&vid=1",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:53.717410+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/coles",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:53.865927+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/436869",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:53.915018+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/admissions/graduate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:54.004875+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/dreyes18/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:54.104430+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/wellbeing/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:54.359095+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/apply/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:54.717371+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/pitch-perfect-drafting-a-compelling-sotl-grant-project-summary",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:54.718593+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53763887796007/confirm?instance_id=53763887797032&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:55.275832+00:00",
+    "event": "skip",
+    "url": "https://advance.cpe.kennesaw.edu/ai-essentials/payment-options",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:55.468131+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/econ",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:55.616547+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/admissions/undergraduate/admission-requirements/transfer.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:55.812293+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/involvement/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:55.866174+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/bangalet/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:55.938114+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/fees/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:56.147671+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/from-college-to-career-explore-technology-careers-at-att-october-14",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:56.149109+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54160202334621/confirm?instance_id=54160202335646&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:57.144416+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/visit/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.513538+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/econ_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.535340+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/spirit-traditions/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.649572+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/courses/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.706277+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aaphale/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.745986+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/alc-general-committee-meeting",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:57.747149+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53240115674833/confirm?instance_id=53240115675859&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:14:58.689657+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/request-info.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.269808+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/involvement/fraternity-sorority-life/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.359079+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/is",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.394110+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/levels/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.619212+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/marastou/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.878163+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/irb-training-informed-consent-best-practices-5890",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:14:59.879217+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53984458233932/confirm?instance_id=53984458234957&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:00.688812+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/admissions/undergraduate/check-your-status/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:00.992514+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:01.424344+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/is_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:01.440711+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/dariail1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:01.824157+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/copy-of-workshop-writing-at-the-university-level-1642",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:01.968149+00:00",
+    "event": "fetch",
+    "url": "https://netidlookup.kennesaw.edu/lookup/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:02.243790+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/orientation/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:02.602512+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/industry-business/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:03.212923+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/msis_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:03.290480+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aarias5/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:03.856738+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/discover-student-affairs/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:04.187078+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/centers-facilities/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:04.269813+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/english_building",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:04.271045+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53949891110141/confirm?instance_id=53949895724555&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:04.342548+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/440151",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:05.072276+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/mktg",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:05.113555+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/narmer/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:05.139046+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/housing-dining-transportation/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:05.906932+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/centers/3d-center",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:05.948892+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/undergraduate-research/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:06.046943+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/math-talks-seminar-series-101426",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:06.208176+00:00",
+    "event": "fetch",
+    "url": "http://mycard.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:06.937685+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/campus-activities/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:07.035565+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/mktg_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:07.042815+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/jarnet11/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:07.345293+00:00",
+    "event": "fetch",
+    "url": "http://transit.kennesaw.edu/bus_routes/kennesaw_shopping_route.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:07.749454+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/external-affairs/burruss-institute/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:07.782817+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/news/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:08.045456+00:00",
+    "event": "fetch",
+    "url": "https://catalog.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:08.627514+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/employment-and-volunteering/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:08.839548+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/hweber1/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:08.931891+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/dba_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:09.003407+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/mathematics_building_242",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:09.005069+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/54159346092381/confirm?instance_id=54159351728196&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:09.187010+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/accreditation.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:09.294808+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/research/podcast/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:10.207922+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/health/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:10.553963+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/bartese/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:10.621796+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/adult-learner/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:10.707795+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/mngt",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:11.444488+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/copy-of-workshop-revision-editing-and-proofreading-7868",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:11.688539+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/arts/box-office/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:11.813707+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/faq/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:12.307303+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/aasgill/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:12.449184+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/meh_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:13.132664+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/university_village_923",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:13.133904+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53949737575675/confirm?instance_id=53949751799407&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:13.160312+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/colleges-departments/coles/academics/information-systems-security/labs/brainlab/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:13.604446+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/community-esl/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:13.654551+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/marb/archives/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:13.798431+00:00",
+    "event": "fetch",
+    "url": "https://arts.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:14.126110+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/tashuri/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:14.193446+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/phdba_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:14.635544+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/fiscal-services/budget-planning/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:14.775694+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/436870",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:15.105027+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/marb/rare-books/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:15.220860+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/policies/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:15.789111+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/pathways-forward",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:15.856403+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/masmar/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:16.114029+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/acct",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:16.171269+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/fiscal-services/bursar/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:16.834301+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/iep/meet-our-instructors/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:17.227457+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/bioinnovation-lab/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:17.612744+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/campus-operations/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:17.650064+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/matiqull/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:17.925063+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/acct_facpubs",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:18.368090+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/prillaman_health_sciences",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:18.369390+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53868368206054/confirm?instance_id=54124988525472&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:18.641305+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/courses/?_sft_course_category=construction-fundamentals",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:18.771152+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/research.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:18.940973+00:00",
+    "event": "fetch",
+    "url": "https://bioinnovation.kennesaw.edu/docs/Hussein%20et%20al.%20-%202017%20-%20Exploring%20the%20microbial%20diversity%20in%20Jordanian%20hot.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:19.487680+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/ratkin16/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:19.616597+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/archandcmgmt",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:20.250002+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/postal-services/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:20.297241+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/copy-of-club-the-write-place-9089",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:20.342964+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/professional/baking-and-pastry/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:20.626290+00:00",
+    "event": "fetch",
+    "url": "https://bioinnovation.kennesaw.edu/docs/Jacob%20et%20al.%20-%20Microbial%20community%20analysis%20of%20the%20hypersaline%20wa.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:21.290084+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/havci/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:21.350095+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/arch",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:21.833214+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/campus-services/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:22.044226+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/sallie-mae-education-loans/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:22.358739+00:00",
+    "event": "fetch",
+    "url": "https://bioinnovation.kennesaw.edu/docs/s12866-014-0246-y-1tk8n1e.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:22.409922+00:00",
+    "event": "fetch",
+    "url": "https://copyprint.kennesaw.edu/services/faculty-staff.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:22.814765+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/lawrence_v_johnson_library",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:22.816267+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53690709638796/confirm?instance_id=53690727669586&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:23.128964+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/raygun/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.235830+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/archstudent_cultures",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.310541+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/athletics/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.526096+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/talon-one/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.612417+00:00",
+    "event": "fetch",
+    "url": "https://marchingowls.kennesaw.edu/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.690374+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2024/11/25/paralegal-career-skills-job-outlook-certificate-guide/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:23.974866+00:00",
+    "event": "fetch",
+    "url": "https://bioinnovation.kennesaw.edu/docs/artA10.1007Fs10295-011-1064-y-sc16yc.pdf",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:24.803042+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/news/whats-new.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:24.936675+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/ybabenko/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.075514+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/current-students/student-affairs/wellbeing/care-services/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.167445+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/barch_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.205546+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/copy-of-club-writers-warlocks-5046",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.206899+00:00",
+    "event": "skip",
+    "url": "https://calendar.kennesaw.edu/event/53690733093261/confirm?instance_id=53690747784580&return=https%3A%2F%2Fcalendar.kennesaw.edu%2Fcalendar",
+    "failure_reason": "Blocked by robots.txt",
+    "status": null
+}
+{
+    "ts": "2026-10-15T01:15:25.333250+00:00",
+    "event": "fetch",
+    "url": "https://cpe.kennesaw.edu/blog/2021/12/15/graduate-spotlight-legal-assistant-advances-career-with-paralegal-certificate/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.400310+00:00",
+    "event": "fetch",
+    "url": "https://libanswers.kennesaw.edu/IR/faq/446179",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:25.578798+00:00",
+    "event": "fetch",
+    "url": "https://bioinnovation.kennesaw.edu/research/antifungal-biocontrol.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:26.281351+00:00",
+    "event": "fetch",
+    "url": "https://www.kennesaw.edu/president/annual-report/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:26.573095+00:00",
+    "event": "fetch",
+    "url": "https://campus.kennesaw.edu/offices-services/catering/",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:26.787942+00:00",
+    "event": "fetch",
+    "url": "https://facultyweb.kennesaw.edu/mbaek/index.php",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:26.852383+00:00",
+    "event": "fetch",
+    "url": "https://digitalcommons.kennesaw.edu/msarch_etd",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:27.019635+00:00",
+    "event": "fetch",
+    "url": "https://soar.kennesaw.edu/handle/11360/1",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:15:27.582082+00:00",
+    "event": "fetch",
+    "url": "https://calendar.kennesaw.edu/event/vital-community-of-practice",
+    "failure_reason": "Successfully fetched",
+    "status": 200
+}
+{
+    "ts": "2026-10-15T01:17:08.789319+00:00",
+    "event": "fetch",
+    "url": "https://catalog.kennesaw.edu/index.php?catoid=81",
+    "failure_reason": "Successfully fetched",
+    "status": 200
 }

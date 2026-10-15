@@ -65,13 +65,7 @@ stats_path = Path(__file__).parent.parent/"artifacts"/"stats.json"
 stats_path.parent.mkdir(parents=True, exist_ok=True)
 
 
-# Corpus file (path)
-#output_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
-#output_path.parent.mkdir(parents=True, exist_ok=True)
-
-
 # Clear corpus from previous crawl
-#output_path.write_text("", encoding="utf-8")
 pages_path.write_text("", encoding="utf-8")
 crawl_path.write_text("", encoding="utf-8")
 stats_path.write_text("", encoding="utf-8")
@@ -329,16 +323,6 @@ def retry(url):
         print(f"Connection failure while retrying: {url}")
     except requests.exceptions.RequestException as e:
         print(f"Request error while retrying {url}: {e}")
-
-
-# Dumps the page into corpus file
-#def dump_corpus(page):
-#    corpus_lock.acquire()
-#    try:
-#        with output_path.open("a", encoding="utf-8") as corpus_file:
-#            corpus_file.write(json.dumps(page, ensure_ascii=False) + "\n")
-#    finally:
-#        corpus_lock.release()
 
 
 # dump pages into corpus file

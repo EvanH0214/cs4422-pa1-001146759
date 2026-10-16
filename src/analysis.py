@@ -33,6 +33,19 @@ def q1a():
         print(pattern_counter)
 
 # Q1.b Could any of them be unlimited?
+def q1b():
+    url_counter = Counter()
+
+    with crawl_path.open("r", encoding="utf-8") as crawl_log:
+        for line in crawl_log:
+            record = json.loads(line)
+            if "url" in record:
+                urls = record["url"]
+                pattern = urls[:urls.find("kennesaw.edu")]
+                url_counter[pattern] += 1
+
+    print(url_counter.most_common(10))
+
 # Q1.c What did you do about it, and why?
 
 
@@ -80,8 +93,11 @@ def q3():
 # Q8.c What was your overall request rate and total wall-clock time?
 
 
-print("Running q1:\n")
+print("Running q1a:\n")
 q1a()
+
+print("\n\nRunning q1b:\n")
+q1b()
 
 print("\n\nRunning q3:\n")
 q3()

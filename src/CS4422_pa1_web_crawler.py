@@ -652,7 +652,9 @@ def crawl(host):
                     in_progress.remove(current)
                 finally:
                     visited_lock.release()
+                    dump_crawl_log(datetime.now(timezone.utc).isoformat(), "skip", current, "Exact duplicate", None)
                 continue
+
             # checks for near duplicates
             if detect_near_dupes(text):
                 visited_lock.acquire()
@@ -661,6 +663,7 @@ def crawl(host):
                     in_progress.remove(current)
                 finally:
                     visited_lock.release()
+                    dump_crawl_log(datetime.now(timezone.utc).isoformat(), "skip", current, "Near duplicate", None)
                 continue
 
             # Successfully crawled a page
@@ -769,6 +772,9 @@ def main():
     print(f"number of visited: {len(visited)}")
     elapsed = time.perf_counter() - start_time
     print(f"Crawl finished in {elapsed:.1f} seconds")
+
+    print("dupes list:")
+    print(dupes_list)
 
     # Add links in queues to crawl log with enqueue status
     for host in host_list:

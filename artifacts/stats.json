@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
     "Seed URL": "https://www.kennesaw.edu/",
     "Page budget": 100,
     "URLS seen": 2719,
@@ -7,4 +8,14 @@
     "urls_seen": 2719,
     "Crawl_time": 50.466657800017856,
     "robots_skips": 18
+=======
+    "Seed URL": "https://www.kennesaw.edu",
+    "Page budget": 500,
+    "URLS seen": 33518,
+    "Max crawl delay": 120.0,
+    "Pages_fetched": 505,
+    "urls_seen": 33518,
+    "Crawl_time": 378.31674739997834,
+    "robots_skips": 51
+>>>>>>> 17d4e41d1dc8fda95dc1a442dca167e8a2780266
 }

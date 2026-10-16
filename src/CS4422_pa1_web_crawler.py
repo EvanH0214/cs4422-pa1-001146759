@@ -401,14 +401,14 @@ def detect_near_dupes(page_content):
     return False
 
 # Dump pages into corpus file
-def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
+def dump_pages(url_canonical, status, fetched_at, title, text, out_links, delay):
     word_count = len(text.split())
     normalized_text = " ".join(text.lower().split())
     # generate sha-256 hash as hexadecimal string
     content_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
     canonical_link = None
 
-    record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link}
+    record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link, "delay": delay}
 
     pages_lock.acquire()
     try:
@@ -432,9 +432,9 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
 
 
 # Dump stats into corpus
-def dump_stats(pages_fetched, urls_seen, wall_clock_seconds, robots_skips, random_seed):
+def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips):
 
-    record = {"Pages_fetched": pages_fetched, "urls_seen": urls_seen, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "random_seed": random_seed}
+    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Pages_fetched": pages_fetched, "urls_seen": urls_seen, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips}
 
     stats_lock.acquire()
     try:
@@ -702,7 +702,7 @@ def crawl(host):
         dump_crawl_log(datetime.now(timezone.utc).isoformat(), "fetch", current, "Successfully fetched", status)
 
         # Dump visited page into pages.jsonl
-        dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, out_links)
+        dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, out_links, host.get_delay())
 
     print(f"{threading.current_thread().name} finished.")
 
@@ -788,7 +788,15 @@ def main():
                     fetched_counter += 1
                 if record["event"] == "skip":
                     robots_skips_counter +=1
-    print("Dumping Stats")
-    dump_stats(fetched_counter, seen_counter, elapsed, robots_skips_counter, None)
 
+    with pages_path.open("r", encoding="utf-8") as pages_file:
+        max_delay = 0
+        for line in pages_file:
+            record = json.loads(line)
+            if record["delay"] > max_delay:
+                max_delay = record["delay"]
+
+    print("Dumping Stats")
+    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, elapsed, robots_skips_counter)
+     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
 main()

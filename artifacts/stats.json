@@ -1,7 +1,10 @@
 {
-    "Pages_fetched": 508,
-    "urls_seen": 33427,
-    "Crawl_time": 135.68757240008563,
-    "robots_skips": 46,
-    "random_seed": null
+    "Seed URL": "https://www.kennesaw.edu",
+    "Page budget": 500,
+    "URLS seen": 33595,
+    "Max crawl delay": 120.0,
+    "Pages_fetched": 509,
+    "urls_seen": 33595,
+    "Crawl_time": 390.729889200069,
+    "robots_skips": 54
 }

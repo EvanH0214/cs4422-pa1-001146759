@@ -30,13 +30,24 @@ stats_path.parent.mkdir(parents=True, exist_ok=True)
 # Q3. What were the five most common ways your fetches failed, ranked by count?
 failures = []
 skip_failures = 0
-with crawl_path.open("r", encoding="utf-8") as crawl_log_file:
-    for line in crawl_log_file:
-        current_line = json.loads(line)
-        if "skip" in current_line:
-            skip_failures += 1
-             
-print("skip failures: " + skip_failures)
+
+with crawl_path.open("r", encoding="utf-8") as crawl_log:
+    lines = crawl_log.read().splitlines()
+
+    for line in lines:
+        if not line:
+            continue
+        if "event" not in line:
+            continue
+        events = [col.strip() for col in line.split(':') if col]
+
+        if events[*, 2] is "enqueue":
+            continue
+
+        if events[*, 2] is "fetch":
+            continue
+
+        print(events[*, *])
 
 
 # Q4. Which are the top 5 pages by incoming links and the top 5 by outgoing links?

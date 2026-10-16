@@ -388,7 +388,7 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
     crawl_lock.acquire()
     try:
         with crawl_path.open("a", encoding="utf-8") as crawl_file:
-            crawl_file.write(json.dumps(record, ensure_ascii=False, indent=4) + "\n")
+            crawl_file.write(json.dumps(record, ensure_ascii=False) + "\n")
     finally:
         crawl_lock.release()
 

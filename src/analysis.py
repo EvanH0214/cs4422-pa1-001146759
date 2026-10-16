@@ -1,6 +1,7 @@
 import json
 import argparse
 from pathlib import Path
+from collections import Counter
 
 
 #  Output paths for artifacts
@@ -28,27 +29,27 @@ stats_path.parent.mkdir(parents=True, exist_ok=True)
 
 
 # Q3. What were the five most common ways your fetches failed, ranked by count?
-failures = []
-skip_failures = 0
+failure_counter = Counter()
 
 with crawl_path.open("r", encoding="utf-8") as crawl_log:
-    lines = crawl_log.read().splitlines()
+    for line in crawl_log:
+        record = json.loads(line)
+        if "failure_reason" in record:
+            if record["failure_reason"] == "Max pages reached":
+                continue
+            if record["failure_reason"] == "Successfully fetched":
+                continue
+            failure_counter[record["failure_reason"]] += 1
 
-    for line in lines:
-        if not line:
-            continue
-        if "event" not in line:
-            continue
-        events = [col.strip() for col in line.split(':') if col]
+    print(failure_counter)
 
-        if events[*, 2] is "enqueue":
-            continue
 
-        if events[*, 2] is "fetch":
-            continue
 
-        print(events[*, *])
 
+       
+
+
+    
 
 # Q4. Which are the top 5 pages by incoming links and the top 5 by outgoing links?
 

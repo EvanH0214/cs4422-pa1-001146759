@@ -1,10 +1,10 @@
 {
-    "Seed URL": "https://www.kennesaw.edu",
-    "Page budget": 500,
-    "URLS seen": 33595,
-    "Max crawl delay": 120.0,
-    "Pages_fetched": 509,
-    "urls_seen": 33595,
-    "Crawl_time": 390.729889200069,
-    "robots_skips": 54
+    "Seed URL": "https://www.kennesaw.edu/",
+    "Page budget": 100,
+    "URLS seen": 2719,
+    "Max crawl delay": 10.0,
+    "Pages_fetched": 108,
+    "urls_seen": 2719,
+    "Crawl_time": 50.466657800017856,
+    "robots_skips": 18
 }

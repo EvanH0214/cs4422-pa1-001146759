@@ -3,6 +3,9 @@ import argparse
 from pathlib import Path
 from collections import Counter
 
+# Configurations
+BOILERPLATE_THRESHOLD = 0.5
+SHINGLE_SIZE = 5
 
 #  Output paths for artifacts
 pages_path = Path(__file__).parent.parent/"artifacts"/"pages.jsonl"
@@ -76,7 +79,25 @@ def q3():
 
 # Q5. Boilerplate identification and removal
 # Q5.a How much of each page is boilerplate? Report mean words per page before and after removal, and the top 5 longest pages under each.
+def generate_shingles(text, n = 5):
+    words = " ".join(text.lower().split()).split()
+    shingles = []
+    # gets every possible group of SHINGLE_SIZE consecutive words
+    for i in range(len(words) - n + 1):
+        shingle = tuple(words[i:i+n])
+        shingles.append(shingle)
+    return shingles
 
+def identify_boilerplate(pages, threshold = BOILERPLATE_THRESHOLD):
+    shingles_counter = Counter()
+    # counts each shingle only once per page
+    for page in pages:
+        unique_shingles = set(generate_shingles(page, SHINGLE_SIZE))
+        shingles_counter.update(unique_shingles)
+    return None
+
+def remove_boilerplate():
+    return None
 
 # Q6. Text statistics
 # Q6.a What are the 30 most frequent words before/after stopwords are removed? Describe the difference.

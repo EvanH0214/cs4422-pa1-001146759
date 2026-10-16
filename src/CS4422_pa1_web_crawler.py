@@ -550,7 +550,7 @@ def normalize_url(url):
 
     # Check if url is in dupe list
     dupe_lock.acquire()
-    if normalized_link in dupes_list:
+    if any(dupe["url"] == normalized_link for dupe in dupes_list):
         dupe_lock.release()
         return None
     dupe_lock.release()
@@ -638,8 +638,14 @@ def crawl(host):
                 finally:
                     visited_lock.release()
                 continue
+
+            soup = BeautifulSoup(page_content, "html.parser")
+            # stores title extracted from HTML
+            title = soup.title.get_text(strip=True) if soup.title else ""
+            # stores text extracted from HTML
+            text = soup.get_text(" ", strip=True)
             # checks for exact duplicates
-            if detect_exact_dupes(page_content):
+            if detect_exact_dupes(text):
                 visited_lock.acquire()
                 try:
                     dupes_list.append({"url": current, "reason": "exact duplicate"})
@@ -648,7 +654,7 @@ def crawl(host):
                     visited_lock.release()
                 continue
             # checks for near duplicates
-            if detect_near_dupes(page_content):
+            if detect_near_dupes(text):
                 visited_lock.acquire()
                 try:
                     dupes_list.append({"url": current, "reason": "near duplicate"})
@@ -656,11 +662,6 @@ def crawl(host):
                 finally:
                     visited_lock.release()
                 continue
-            soup = BeautifulSoup(page_content, "html.parser")
-            # stores title extracted from HTML
-            title = soup.title.get_text(strip=True) if soup.title else ""
-            # stores text extracted from HTML
-            text = soup.get_text(" ", strip=True)
 
             # Successfully crawled a page
             visited_lock.acquire()
@@ -798,5 +799,6 @@ def main():
 
     print("Dumping Stats")
     dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, elapsed, robots_skips_counter)
-     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
+    # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
+    print("Duplicates detected:", dupes_list)
 main()

@@ -12,6 +12,7 @@ import w3lib.url
 import threading
 import hashlib
 from datetime import datetime, timezone
+from collections import Counter
 
 # Configurations
 REQUEST_TIMEOUT = 10
@@ -396,7 +397,7 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
 # Dump stats into corpus
 def dump_stats(pages_fetched, urls_seen, wall_clock_seconds, robots_skips, random_seed):
 
-    record = [pages_fetched, urls_seen, wall_clock_seconds, robots_skips, random_seed]
+    record = {"Pages_fetched": pages_fetched, "urls_seen": urls_seen, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "random_seed": random_seed}
 
     stats_lock.acquire()
     try:
@@ -710,5 +711,22 @@ def main():
     for host in host_list:
         while host.has_urls():
             dump_crawl_log(datetime.now(timezone.utc).isoformat(), "enqueue", host.pop_from_queue(), "Max pages reached", None)
+
+    # Create stats.json artifact file
+    fetched_counter = 0
+    seen_counter = 0
+    robots_skips_counter = 0
+
+    with crawl_path.open("r", encoding="utf-8") as crawl_log:
+        for line in crawl_log:
+            record = json.loads(line) 
+            if record:
+                seen_counter += 1
+                if record["event"] == "fetch":
+                    fetched_counter += 1
+                if record["event"] == "skip":
+                    robots_skips_counter +=1
+    print("Dumping Stats")
+    dump_stats(fetched_counter, seen_counter, elapsed, robots_skips_counter, None)
 
 main()

@@ -82,3 +82,6 @@ def q3():
 
 print("Running q1:\n")
 q1a()
+
+print("\n\nRunning q3:\n")
+q3()

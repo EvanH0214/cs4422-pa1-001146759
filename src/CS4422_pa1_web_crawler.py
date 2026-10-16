@@ -18,7 +18,8 @@ REQUEST_TIMEOUT = 10
 MAX_REDIRECTS = 5
 POLITENESS_DELAY = 1 
 MAX_PAGES = 0 
-
+SHINGLE_SIZE = 5
+NEAR_DUPE_THRESHOLD = 0.80
 
 # Create visited, blocked, host, and threads list.
 visited = []
@@ -330,44 +331,71 @@ def retry(url):
     except requests.exceptions.RequestException as e:
         print(f"Request error while retrying {url}: {e}")
 
-# Detect duplicates method
-def detect_dupes(page_content):
-    # hashes the given page content 
-    hashed_page = hashlib.sha256(page_content.encode("utf-8")).hexdigest()
-    # return true if there's a duplicate of hashed page in the corpus, else return false
-    if pages_path.exists():
-        with pages_path.open("r", encoding="utf-8") as corpus_file:
-            # compares hashed page content in corpus to the current one
-            for line in corpus_file:
-                stored_hash = hashlib.sha256(json.loads(line).encode("utf-8")).hexdigest()
-                if stored_hash == hashed_page:
-                    print(f"Duplicate hash: {stored_hash}\nCurrent hash: {hashed_page}")
-                    return True
-    return False
-
 
 # Detect duplicates method
-def detect_dupes(page_content):
-    # hashes the given page content 
-    hashed_page = hashlib.sha256(page_content.encode("utf-8")).hexdigest()
-    # return true if there's a duplicate of hashed page in the corpus, else return false
-    if pages_path.exists():
-        with pages_path.open("r", encoding="utf-8") as corpus_file:
-            # compares hashed page content in corpus to the current one
-            for line in corpus_file:
-                stored_hash = hashlib.sha256(json.loads(line).encode("utf-8")).hexdigest()
-                if stored_hash == hashed_page:
-                    print(f"Duplicate hash: {stored_hash}\nCurrent hash: {hashed_page}")
-                    return True
+def detect_exact_dupes(page_content):
+    # normalizes and hashes current page text
+    normalized_text = " ".join(page_content.lower().split())
+    current_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
+    # compares current page hash with the hash in the records in pages.jsonl for exact match
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+        for line in corpus_file:
+            record = json.loads(line)
+            if record["content_hash"] == current_hash:
+                return True
     return False
 
+# Generates n-gram shingles where n = SHINGLE_SIZE
+def generate_shingles(text, n = SHINGLE_SIZE):
+    words = " ".join(text.lower().split()).split()
+    shingles = {}
+    # gets every possible group of SHINGLE_SIZE consecutive words
+    for i in range(len(words) - n + 1):
+        shingle = tuple(words[i:i+n])
+        shingles.append(shingle)
+    return shingles
+
+# Computes jaccard similarity
+def jaccard_similarity(shingles_a, shingles_b):
+    intersection = shingles_a & shingles_b # shared (same) shingles between the two
+    union = shingles_a | shingles_b # total unique shingles 
+    if not union:
+        return 0
+    return len(intersection)/len(union)
+
+# detects near duplicates -- true if jaccard similarity of the compared shingles is above the threshold
+def detect_near_dupes(page_content):
+    # generate shingles for current page
+    current_shingles = generate_shingles(page_content, n = SHINGLE_SIZE)
+
+    # hashes normalized text and compares for skipping exact dupes
+    normalized_text = " ".join(page_content.lower().split())
+    current_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
+    
+    if not current_shingles:
+        return False
+    # goes through each record, generates shingle, computes and compares jaccard similarity with the threshold
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+            for line in corpus_file:
+                # skips exact dupes
+                if record["content_hash"] == current_hash:
+                    continue
+                # prevents error if jsonl contains blank line
+                if not line.strip():
+                    continue
+                record = json.loads(line)
+                stored_shingles = generate_shingles(record["text"])
+                similarity = jaccard_similarity(current_shingles, stored_shingles)
+                if similarity >= NEAR_DUPE_THRESHOLD:
+                    return True
+    return False
 
 # Dump pages into corpus file
 def dump_pages(url_canonical, status, fetched_at, title, text, out_links):
     word_count = len(text.split())
     normalized_text = " ".join(text.lower().split())
     # generate sha-256 hash as hexadecimal string
-    content_hash = hashlib.sha256((normalized_text.strip().lower()).encode("utf-8")).hexdigest()
+    content_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
     canonical_link = None
 
     record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link}

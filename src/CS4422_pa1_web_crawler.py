@@ -27,6 +27,7 @@ in_progress = []
 blocked = []
 host_list = []
 host_threads = []
+dupes_list = []
 
 
 # Create locks for threading
@@ -34,10 +35,10 @@ host_lock = threading.Lock()
 visited_lock = threading.Lock()
 blocked_lock = threading.Lock()
 threadList_lock = threading.Lock()
-#corpus_lock = threading.Lock()
 pages_lock = threading.Lock()
 crawl_lock = threading.Lock()
 stats_lock = threading.Lock()
+dupe_lock = threading.Lock()
 
 
 # Create header for requests
@@ -228,7 +229,6 @@ def fetch_page(url):
     current_url = url
     redirect_urls = []
     redirect_count = 0
-
     while redirect_count < MAX_REDIRECTS:
 
         # Detect and handle redirect loops
@@ -338,17 +338,21 @@ def detect_exact_dupes(page_content):
     normalized_text = " ".join(page_content.lower().split())
     current_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
     # compares current page hash with the hash in the records in pages.jsonl for exact match
-    with pages_path.open("r", encoding="utf-8") as corpus_file:
-        for line in corpus_file:
-            record = json.loads(line)
-            if record["content_hash"] == current_hash:
-                return True
+    pages_lock.acquire()
+    try:
+        with pages_path.open("r", encoding="utf-8") as corpus_file:
+            for line in corpus_file:
+                record = json.loads(line)
+                if record["content_hash"] == current_hash:
+                    return True
+    finally:
+        pages_lock.release()
     return False
 
 # Generates n-gram shingles where n = SHINGLE_SIZE
 def generate_shingles(text, n = SHINGLE_SIZE):
     words = " ".join(text.lower().split()).split()
-    shingles = {}
+    shingles = []
     # gets every possible group of SHINGLE_SIZE consecutive words
     for i in range(len(words) - n + 1):
         shingle = tuple(words[i:i+n])
@@ -357,8 +361,8 @@ def generate_shingles(text, n = SHINGLE_SIZE):
 
 # Computes jaccard similarity
 def jaccard_similarity(shingles_a, shingles_b):
-    intersection = shingles_a & shingles_b # shared (same) shingles between the two
-    union = shingles_a | shingles_b # total unique shingles 
+    intersection = list(set(shingles_a) & set(shingles_b)) # shared (same) shingles between the two
+    union = list(set(shingles_a) | set(shingles_b)) # total unique shingles 
     if not union:
         return 0
     return len(intersection)/len(union)
@@ -375,19 +379,24 @@ def detect_near_dupes(page_content):
     if not current_shingles:
         return False
     # goes through each record, generates shingle, computes and compares jaccard similarity with the threshold
-    with pages_path.open("r", encoding="utf-8") as corpus_file:
-            for line in corpus_file:
-                # skips exact dupes
-                if record["content_hash"] == current_hash:
-                    continue
-                # prevents error if jsonl contains blank line
-                if not line.strip():
-                    continue
-                record = json.loads(line)
-                stored_shingles = generate_shingles(record["text"])
-                similarity = jaccard_similarity(current_shingles, stored_shingles)
-                if similarity >= NEAR_DUPE_THRESHOLD:
-                    return True
+    pages_lock.acquire()
+    try:
+        with pages_path.open("r", encoding="utf-8") as corpus_file:
+                for line in corpus_file:
+                    # skips exact dupes
+                    record = json.loads(line)
+                    if record["content_hash"] == current_hash:
+                        continue
+                    # prevents error if jsonl contains blank line
+                    if not line.strip():
+                        continue
+                    record = json.loads(line)
+                    stored_shingles = generate_shingles(record["text"])
+                    similarity = jaccard_similarity(current_shingles, stored_shingles)
+                    if similarity >= NEAR_DUPE_THRESHOLD:
+                        return True
+    finally:
+        pages_lock.release()
     return False
 
 # Dump pages into corpus file
@@ -538,6 +547,13 @@ def normalize_url(url):
         return None
     blocked_lock.release()
 
+    # Check if url is in dupe list
+    dupe_lock.acquire()
+    if normalized_link in dupes_list:
+        dupe_lock.release()
+        return None
+    dupe_lock.release()
+
     # Check if url is in any host queue
     host_lock.acquire()
     try:
@@ -621,6 +637,24 @@ def crawl(host):
                 finally:
                     visited_lock.release()
                 continue
+            # checks for exact duplicates
+            if detect_exact_dupes(page_content):
+                visited_lock.acquire()
+                try:
+                    dupes_list.append({"url": current, "reason": "exact duplicate"})
+                    in_progress.remove(current)
+                finally:
+                    visited_lock.release()
+                continue
+            # checks for near duplicates
+            if detect_near_dupes(page_content):
+                visited_lock.acquire()
+                try:
+                    dupes_list.append({"url": current, "reason": "near duplicate"})
+                    in_progress.remove(current)
+                finally:
+                    visited_lock.release()
+                continue
             soup = BeautifulSoup(page_content, "html.parser")
             # stores title extracted from HTML
             title = soup.title.get_text(strip=True) if soup.title else ""
@@ -635,7 +669,7 @@ def crawl(host):
                 visited_lock.release()
             
 
-        # URL blocekd by robots.txt
+        # URL blocked by robots.txt
         else:
             print("Robots.txt did not allow this URL: " + current)
 

@@ -48,6 +48,7 @@ def q1b():
                 pattern = urls[:urls.find("kennesaw.edu")]
                 url_counter[pattern] += 1
 
+    print("Top 10 domains by count:\n")
     print(url_counter.most_common(10))
 
 # Q1.c What did you do about it, and why?
@@ -131,8 +132,6 @@ def remove_boilerplate(text, boilerplate_shingles):
             cleaned_words.append(words[i])
     return " ".join(cleaned_words)
 
-    
-    
 
 def q5():
     pages = []
@@ -218,10 +217,10 @@ def q8c():
             
 
 print("Running q1a:\n")
-#q1a()
+q1a()
 
 print("\n\nRunning q1b:\n")
-#q1b()
+q1b()
 
 print("\n\nRunning q3:\n")
 #q3()
@@ -236,4 +235,4 @@ print("\n\nRunning q8b:\n")
 #q8b()
 
 print("\n\nRunning q8c:\n")
-q8c()
+#q8c()

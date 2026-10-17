@@ -92,12 +92,29 @@ def identify_boilerplate(pages, threshold = BOILERPLATE_THRESHOLD):
     shingles_counter = Counter()
     # counts each shingle only once per page
     for page in pages:
-        unique_shingles = set(generate_shingles(page, SHINGLE_SIZE))
+        unique_shingles = []
+        for shingle in generate_shingles(page, SHINGLE_SIZE):
+            if shingle not in unique_shingles:
+                unique_shingles.append(shingle)
+        # updates shingles count in the counter
         shingles_counter.update(unique_shingles)
-    return None
+    # returns empty list if there're no pages
+    if len(pages)==0:
+        return []
+    # find how often the shingle appears across all pages, if greater than threshold (50%), add to boilerplate
+    boilerplate_shingles = []
+    for shingle, count in shingles_counter.items():
+        fraction = count/len(pages)
+        if fraction > threshold:
+            boilerplate_shingles.append(shingle)
+    return boilerplate_shingles
+
 
 def remove_boilerplate():
     return None
+
+def q5():
+
 
 # Q6. Text statistics
 # Q6.a What are the 30 most frequent words before/after stopwords are removed? Describe the difference.

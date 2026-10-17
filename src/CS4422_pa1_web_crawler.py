@@ -806,5 +806,4 @@ def main():
     print("Dumping Stats")
     dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, elapsed, robots_skips_counter)
     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
-    print("Duplicates detected:", dupes_list)
 main()

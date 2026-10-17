@@ -39,7 +39,23 @@ Q7)
 
 
 Q8)
+
   Q8a)
+
+  Yes, the crawl delay held on every host across the entire crawl. This is seen from the stats page which tracks the minimum delay that a thread waited between requests.
 
   Q8b)
 
+  Robots.txt files stopped our crawler from crawling 61 pages, half of which came from calendar.kennesaw.edu.
+  
+  https://digitalcommons.kennesaw.edu/do/discipline_browser/disciplines   was blocked by:
+  
+  Disallow: /disciplines.cgi
+
+  https://ksuweb.kennesaw.edu/~vclincy/    was blocked by:
+  
+  Disallow: /
+
+  Q8c)
+
+  The request rate for our crawler was 1.98 pages per second, and the total wall clock time was 254.93 seconds

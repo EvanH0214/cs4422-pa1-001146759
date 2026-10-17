@@ -155,7 +155,6 @@ def q5():
         print("Total words removed:", sum(before_counts.values()) - sum(after_counts.values()))
         print("Mean words before removal: ", sum(before_counts.values())/len(before_counts))
         print("Mean words after removal: ", sum(after_counts.values())/len(after_counts))
-
         # sorts before and after lists of dict based on count, in descending order
         sorted_before = [{"url": url, "count": count} for url, count in sorted(before_counts.items(), key=lambda x: x[1], reverse=True)]
         sorted_after = [{"url": url, "count": count} for url, count in sorted(after_counts.items(), key=lambda x: x[1], reverse=True)]
@@ -217,16 +216,16 @@ def q8c():
             
 
 print("Running q1a:\n")
-q1a()
+#q1a()
 
 print("\n\nRunning q1b:\n")
-q1b()
+#q1b()
 
 print("\n\nRunning q3:\n")
 #q3()
 
 print("\n\nRunning q5:\n")
-#q5()
+q5()
 
 print("\n\nRunning q8a:\n")
 #q8a()

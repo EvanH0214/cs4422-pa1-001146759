@@ -40,6 +40,7 @@ pages_lock = threading.Lock()
 crawl_lock = threading.Lock()
 stats_lock = threading.Lock()
 dupe_lock = threading.Lock()
+in_link_lock = threading.Lock()
 
 
 # Create header for requests
@@ -55,6 +56,7 @@ urls_seen = 0
 wall_clock_seconds = 0
 robots_skips = 0
 random_seed = 0
+in_links = Counter()
 
 
 #  Output paths for artifacts
@@ -432,9 +434,9 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
 
 
 # Dump stats into corpus
-def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_delay, wall_clock_seconds, robots_skips, duplicate_skips):
+def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_delay, wall_clock_seconds, robots_skips, duplicate_skips, in_links):
 
-    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Min crawl delay": min_delay,"Pages_fetched": pages_fetched, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "duplicate_skips": duplicate_skips}
+    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Min crawl delay": min_delay,"Pages_fetched": pages_fetched, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "duplicate_skips": duplicate_skips, "in_links": in_links.most_common(5)}
 
     stats_lock.acquire()
     try:
@@ -468,6 +470,9 @@ def scrape_page(page_content):
         if normalized is None:
             continue
 
+        in_link_lock.acquire()
+        in_links[normalized] += 1
+        in_link_lock.release()
         out_links +=1
         
         # Check if normalized url belongs to an existing host-- Critical Section
@@ -813,6 +818,6 @@ def main():
                 min_delay = record["delay"]
 
     print("Dumping Stats")
-    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, min_delay, elapsed, robots_skips_counter, duplicate_skips_counter)
+    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, min_delay, elapsed, robots_skips_counter, duplicate_skips_counter, in_links)
     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
 main()

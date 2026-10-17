@@ -1,11 +1,33 @@
 {
-    "Seed URL": "https://www.kennesaw.edu/",
+    "Seed URL": "http://www.kennesaw.edu",
     "Page budget": 500,
-    "URLS seen": 34705,
+    "URLS seen": 34747,
     "Max crawl delay": 120.0,
     "Min crawl delay": 1,
-    "Pages_fetched": 507,
-    "Crawl_time": 252.1786816,
-    "robots_skips": 61,
-    "duplicate_skips": 97
+    "Pages_fetched": 504,
+    "Crawl_time": 264.2701093996875,
+    "robots_skips": 60,
+    "duplicate_skips": 125,
+    "in_links": [
+        [
+            "https://legal.kennesaw.edu/open_records_requests.php",
+            7
+        ],
+        [
+            "https://police.kennesaw.edu/",
+            4
+        ],
+        [
+            "https://stratcomm.kennesaw.edu/publications/magazines.php",
+            3
+        ],
+        [
+            "https://www.kennesaw.edu/apply.php",
+            2
+        ],
+        [
+            "https://www.kennesaw.edu/visit.php",
+            2
+        ]
+    ]
 }

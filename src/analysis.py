@@ -4,7 +4,7 @@ from pathlib import Path
 from collections import Counter
 
 # Configurations
-BOILERPLATE_THRESHOLD = 0.5
+BOILERPLATE_THRESHOLD = 0.2
 SHINGLE_SIZE = 5
 
 #  Output paths for artifacts
@@ -110,11 +110,72 @@ def identify_boilerplate(pages, threshold = BOILERPLATE_THRESHOLD):
     return boilerplate_shingles
 
 
-def remove_boilerplate():
-    return None
+def remove_boilerplate(text, boilerplate_shingles):
+    # normalizes and splits text into list of words
+    words = " ".join(text.lower().split()).split()
+    # list of false values that act as a mask for words
+    word_removal = [False] * len(words)
+
+    # finds words that belongs to boilerplate shingles
+    for i in range(len(words) - SHINGLE_SIZE + 1):
+        shingle = tuple(word.lower() for word in words[i:i + SHINGLE_SIZE])
+        if shingle in boilerplate_shingles:
+            for j in range(i, i + SHINGLE_SIZE):
+                word_removal[j] = True
+
+    # keeps the words that aren't in boilerplate 
+    cleaned_words = []
+    for i in range(len(words)):
+        if not word_removal[i]:
+            cleaned_words.append(words[i])
+    return " ".join(cleaned_words)
+
+    
+    
 
 def q5():
+    pages = []
+    urls = []
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+        # appends records in json to the corresponding pages/urls list
+        for line in corpus_file:
+            record = json.loads(line)
+            pages.append(record["text"])
+            urls.append(record["url_canonical"])
+        # finds the boilerplate shingles
+        boilerplate_shingles = identify_boilerplate(pages)
+        # counts words in each page before boilerplate removal, tied to url
+        before_counts = {url: len(text.split()) for url, text in zip(urls, pages)}
+        # calls remove_boilerplate on every page
+        cleaned_pages = [remove_boilerplate(text, boilerplate_shingles) for text in pages]
+        # counts words in each page after boilerplate removal, tied to url
+        after_counts = {url: len(text.split()) for url, text in zip(urls, cleaned_pages)}
+        print("Total pages:", len(pages))
+        print("Boilerplate shingles found:", len(boilerplate_shingles))
+        print("Total words removed:", sum(before_counts.values()) - sum(after_counts.values()))
+        print("Mean words before removal: ", sum(before_counts.values())/len(before_counts))
+        print("Mean words after removal: ", sum(after_counts.values())/len(after_counts))
 
+        # sorts before and after lists of dict based on count, in descending order
+        sorted_before = [{"url": url, "count": count} for url, count in sorted(before_counts.items(), key=lambda x: x[1], reverse=True)]
+        sorted_after = [{"url": url, "count": count} for url, count in sorted(after_counts.items(), key=lambda x: x[1], reverse=True)]
+
+        # prints top 5 longest pages before & after removal
+        print(f"\nTop 5 longest pages before removal:\n"
+              f"1. {sorted_before[0]}\n"
+              f"2. {sorted_before[1]}\n"
+              f"3. {sorted_before[2]}\n"
+              f"4. {sorted_before[3]}\n"
+              f"5. {sorted_before[4]}"
+              )
+        
+        print(f"\nTop 5 longest pages after removal:\n"
+                      f"1. {sorted_after[0]}\n"
+                      f"2. {sorted_after[1]}\n"
+                      f"3. {sorted_after[2]}\n"
+                      f"4. {sorted_after[3]}\n"
+                      f"5. {sorted_after[4]}"
+                      )
 
 # Q6. Text statistics
 # Q6.a What are the 30 most frequent words before/after stopwords are removed? Describe the difference.
@@ -131,11 +192,14 @@ def q5():
 # Q8.c What was your overall request rate and total wall-clock time?
 
 
-print("Running q1a:\n")
-q1a()
+#print("Running q1a:\n")
+#q1a()
 
-print("\n\nRunning q1b:\n")
-q1b()
+#print("\n\nRunning q1b:\n")
+#q1b()
 
-print("\n\nRunning q3:\n")
-q3()
+#print("\n\nRunning q3:\n")
+#q3()
+
+print("\n\nRunning q5:\n")
+q5()

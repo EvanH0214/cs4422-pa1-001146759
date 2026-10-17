@@ -2,6 +2,7 @@ import json
 import argparse
 from pathlib import Path
 from collections import Counter
+from urllib.parse import urlparse
 
 # Configurations
 BOILERPLATE_THRESHOLD = 0.2
@@ -71,7 +72,7 @@ def q3():
                     continue
                 failure_counter[record["failure_reason"]] += 1
 
-        print(failure_counter)
+        print(failure_counter.most_common(5))
 
 
 # Q4. Which are the top 5 pages by incoming links and the top 5 by outgoing links?
@@ -187,19 +188,52 @@ def q5():
 
 # Q8. Politeness evidence
 # Q8.a Did your delay constraint actually hold across the run, on every host?
+def q8a():
+    with stats_path.open("r", encoding="utf-8") as stats_file:
+            record = json.load(stats_file)
+            print("Min delay: " + str(record["Min crawl delay"]))
+
+
 # Q8.b How many URLs did robots.txt stop you from fetching, and on which hosts? Pick two of them and quote the rule line that blocked each.
+def q8b():
+    robots_skips_counter = Counter()
+
+    # Count the number of urls seen, fetched, and skipped
+    with crawl_path.open("r", encoding="utf-8") as crawl_log:
+        for line in crawl_log:
+            record = json.loads(line) 
+            if record:
+                if record["failure_reason"] == "Blocked by robots.txt":
+                    robots_skips_counter[urlparse(record["url"]).hostname] +=1
+                    robots_skips_counter[record["url"]] +=1
+
+        print(robots_skips_counter)
+        print("Total skips: " + str(robots_skips_counter.total()))
 
 # Q8.c What was your overall request rate and total wall-clock time?
+def q8c():
+    with stats_path.open("r", encoding="utf-8") as stats_file:
+            record = json.load(stats_file)
+            print("Crawl time: " + str(record["Crawl_time"]))
+            
 
-
-#print("Running q1a:\n")
+print("Running q1a:\n")
 #q1a()
 
-#print("\n\nRunning q1b:\n")
+print("\n\nRunning q1b:\n")
 #q1b()
 
-#print("\n\nRunning q3:\n")
+print("\n\nRunning q3:\n")
 #q3()
 
 print("\n\nRunning q5:\n")
-q5()
+#q5()
+
+print("\n\nRunning q8a:\n")
+#q8a()
+
+print("\n\nRunning q8b:\n")
+#q8b()
+
+print("\n\nRunning q8c:\n")
+q8c()

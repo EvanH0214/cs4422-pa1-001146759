@@ -432,9 +432,9 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
 
 
 # Dump stats into corpus
-def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips):
+def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_delay, wall_clock_seconds, robots_skips, duplicate_skips):
 
-    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Pages_fetched": pages_fetched, "urls_seen": urls_seen, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips}
+    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Min crawl delay": min_delay,"Pages_fetched": pages_fetched, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "duplicate_skips": duplicate_skips}
 
     stats_lock.acquire()
     try:
@@ -785,7 +785,9 @@ def main():
     fetched_counter = 0
     seen_counter = 0
     robots_skips_counter = 0
+    duplicate_skips_counter = 0
 
+    # Count the number of urls seen, fetched, and skipped
     with crawl_path.open("r", encoding="utf-8") as crawl_log:
         for line in crawl_log:
             record = json.loads(line) 
@@ -794,16 +796,23 @@ def main():
                 if record["event"] == "fetch":
                     fetched_counter += 1
                 if record["event"] == "skip":
-                    robots_skips_counter +=1
+                    if record["failure_reason"] == "Blocked by robots.txt":
+                        robots_skips_counter += 1
+                    else:
+                        duplicate_skips_counter += 1
 
+    # Record the minimum and maximum delay times
     with pages_path.open("r", encoding="utf-8") as pages_file:
         max_delay = 0
+        min_delay = 100
         for line in pages_file:
             record = json.loads(line)
             if record["delay"] > max_delay:
                 max_delay = record["delay"]
+            if record["delay"] < min_delay:
+                min_delay = record["delay"]
 
     print("Dumping Stats")
-    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, elapsed, robots_skips_counter)
+    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, min_delay, elapsed, robots_skips_counter, duplicate_skips_counter)
     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
 main()

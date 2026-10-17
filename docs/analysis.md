@@ -21,6 +21,7 @@ Q2)
 
 Q3)
 
+('Exact duplicate', 88), ('Blocked by robots.txt', 61), ('Near duplicate', 11), ('Connection error', 4), ('TLS/SSL error', 2)
 
 Q4)
 

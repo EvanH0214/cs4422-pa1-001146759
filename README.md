@@ -2,7 +2,9 @@
 ## 0. Overview
 ### First Stage
 If running from commandline, enter "python" followed by the filename "CS4422_pa1_web_crawler.py followed by seed url and max pages parameters with the "--seed_url" and "--max_pages" designations given
+
 EX: python CS4422_pa1_web_crawler.py --seed_url https://www.kennesaw.edu --max_pages 500
+
 If parameters are not given, terminal will prompt for them one by one
 If running from terminal, run file and enter seed url and max pages when prompted
 Crawler should take between 250 and 400 seconds, but may be longer

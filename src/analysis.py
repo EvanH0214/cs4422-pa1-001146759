@@ -83,9 +83,17 @@ def q3():
 
 # Q4. Which are the top 5 pages by incoming links and the top 5 by outgoing links?
 def q4():
+    # Incoming
+    print("Incoming:")
     with stats_path.open("r", encoding="utf-8") as stats_file:
         record = json.load(stats_file)
         print(record["in_links"])
+
+    # Outgoing
+    print("\nOutgoing:")
+    with stats_path.open("r", encoding="utf-8") as stats_file:
+            record = json.load(stats_file)
+            print(record["out_links"])
 
 
 # Q5. Boilerplate identification and removal
@@ -329,7 +337,7 @@ print("\n\nRunning q3:\n")
 #q3()
 
 print("\n\nRunning q4:\n")
-#q4()
+q4()
 
 print("\n\nRunning q5:\n")
 #q5()

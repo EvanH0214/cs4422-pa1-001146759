@@ -41,6 +41,7 @@ crawl_lock = threading.Lock()
 stats_lock = threading.Lock()
 dupe_lock = threading.Lock()
 in_link_lock = threading.Lock()
+out_link_lock = threading.Lock()
 
 
 # Create header for requests
@@ -57,6 +58,7 @@ wall_clock_seconds = 0
 robots_skips = 0
 random_seed = 0
 in_links = Counter()
+out_links = Counter()
 
 
 #  Output paths for artifacts
@@ -403,14 +405,14 @@ def detect_near_dupes(page_content):
     return False
 
 # Dump pages into corpus file
-def dump_pages(url_canonical, status, fetched_at, title, text, out_links, delay):
+def dump_pages(url_canonical, status, fetched_at, title, text, delay):
     word_count = len(text.split())
     normalized_text = " ".join(text.lower().split())
     # generate sha-256 hash as hexadecimal string
     content_hash = hashlib.sha256(normalized_text.encode("utf-8")).hexdigest()
     canonical_link = None
 
-    record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "out_links": out_links, "content_hash": content_hash, "canonical_link": canonical_link, "delay": delay}
+    record = {"url_canonical": url_canonical, "status": status, "fetched_at": fetched_at, "title": title, "text": text, "word_count": word_count, "content_hash": content_hash, "canonical_link": canonical_link, "delay": delay}
 
     pages_lock.acquire()
     try:
@@ -434,9 +436,9 @@ def dump_crawl_log(ts, event, url, failure_reason, status):
 
 
 # Dump stats into corpus
-def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_delay, wall_clock_seconds, robots_skips, duplicate_skips, in_links):
+def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_delay, wall_clock_seconds, robots_skips, duplicate_skips, in_links, out_links):
 
-    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Min crawl delay": min_delay,"Pages_fetched": pages_fetched, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "duplicate_skips": duplicate_skips, "in_links": in_links.most_common(5)}
+    record = {"Seed URL": seed_url, "Page budget": page_budget, "URLS seen": urls_seen, "Max crawl delay": max_delay, "Min crawl delay": min_delay,"Pages_fetched": pages_fetched, "Crawl_time":wall_clock_seconds, "robots_skips": robots_skips, "duplicate_skips": duplicate_skips, "in_links": in_links.most_common(5), "out_links": out_links.most_common(5)}
 
     stats_lock.acquire()
     try:
@@ -450,7 +452,7 @@ def dump_stats(seed_url, page_budget, pages_fetched, urls_seen, max_delay, min_d
 def scrape_page(page_content):
     soup = BeautifulSoup(page_content, "html.parser")
 
-    out_links = 0
+    current_out_links = 0
 
     # Parse each link from the raw html
     for link in soup.find_all("a", href=True):
@@ -473,7 +475,7 @@ def scrape_page(page_content):
         in_link_lock.acquire()
         in_links[normalized] += 1
         in_link_lock.release()
-        out_links +=1
+        current_out_links +=1
         
         # Check if normalized url belongs to an existing host-- Critical Section
         host_lock.acquire()
@@ -529,7 +531,7 @@ def scrape_page(page_content):
         finally:
             host_lock.release()
 
-    return out_links
+    return current_out_links
 
 
 # Normalize url and validate conditions
@@ -606,7 +608,6 @@ def crawl(host):
         status = 0
         title = None
         text = None
-        out_links = 0
 
         # Fetch the next URL from the host's queue
         current = next_url(host)
@@ -699,7 +700,10 @@ def crawl(host):
             continue 
 
         # Scrape current page for links and add to host frontier
-        out_links = scrape_page(page_content)
+        current_out_links = scrape_page(page_content)
+        out_link_lock.acquire()
+        out_links[current] += current_out_links
+        out_link_lock.release()
 
         # Remove url from in_progress and append to visited when done
         visited_lock.acquire() 
@@ -711,7 +715,7 @@ def crawl(host):
         dump_crawl_log(datetime.now(timezone.utc).isoformat(), "fetch", current, "Successfully fetched", status)
 
         # Dump visited page into pages.jsonl
-        dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, out_links, host.get_delay())
+        dump_pages(url_canonical, status, datetime.now(timezone.utc).isoformat(), title, text, host.get_delay())
 
     print(f"{threading.current_thread().name} finished.")
 
@@ -773,13 +777,9 @@ def main():
         finally:
             threadList_lock.release()
 
-    print("visited: ", visited)
     print(f"number of visited: {len(visited)}")
     elapsed = time.perf_counter() - start_time
     print(f"Crawl finished in {elapsed:.1f} seconds")
-
-    print("dupes list:")
-    print(dupes_list)
 
     # Add links in queues to crawl log with enqueue status
     for host in host_list:
@@ -817,7 +817,6 @@ def main():
             if record["delay"] < min_delay:
                 min_delay = record["delay"]
 
-    print("Dumping Stats")
-    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, min_delay, elapsed, robots_skips_counter, duplicate_skips_counter, in_links)
+    dump_stats(seed_url, MAX_PAGES, fetched_counter, seen_counter, max_delay, min_delay, elapsed, robots_skips_counter, duplicate_skips_counter, in_links, out_links)
     # seed_url, page_budget, pages_fetched, urls_seen, max_delay, wall_clock_seconds, robots_skips
 main()

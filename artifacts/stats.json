@@ -1,17 +1,17 @@
 {
-    "Seed URL": "http://www.kennesaw.edu",
+    "Seed URL": "https://www.kennesaw.edu",
     "Page budget": 500,
-    "URLS seen": 34747,
+    "URLS seen": 34982,
     "Max crawl delay": 120.0,
     "Min crawl delay": 1,
-    "Pages_fetched": 504,
-    "Crawl_time": 264.2701093996875,
-    "robots_skips": 60,
-    "duplicate_skips": 125,
+    "Pages_fetched": 505,
+    "Crawl_time": 253.17420129990205,
+    "robots_skips": 59,
+    "duplicate_skips": 108,
     "in_links": [
         [
             "https://legal.kennesaw.edu/open_records_requests.php",
-            7
+            5
         ],
         [
             "https://police.kennesaw.edu/",
@@ -28,6 +28,28 @@
         [
             "https://www.kennesaw.edu/visit.php",
             2
+        ]
+    ],
+    "out_links": [
+        [
+            "https://digitalcommons.kennesaw.edu/authors.html",
+            26982
+        ],
+        [
+            "https://facultyweb.kennesaw.edu/",
+            1354
+        ],
+        [
+            "https://digitalcommons.kennesaw.edu/communities.html",
+            269
+        ],
+        [
+            "https://azindex.kennesaw.edu/",
+            240
+        ],
+        [
+            "https://digitalcommons.kennesaw.edu/barch_etd",
+            213
         ]
     ]
 }

@@ -8,7 +8,7 @@ Name: Evan Horn - netid: 001146759 - EvanH0214
 Name: Darren Ni - netid: 001153212 - WiseChimera
 
 
-Name: Sedat - netid: 001124578 - Sedat8kk 
+Name: Sedat Sekizkardes- netid: 001124578 - Sedat8kk 
 
 ## 2. Contributions
 [placeholder]

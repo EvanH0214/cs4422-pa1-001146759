@@ -395,7 +395,7 @@ print("\n\nRunning q1b:\n")
 #q1b()
 
 print("\n\nRunning q3:\n")
-#q3()
+q3()
 
 print("\n\nRunning q4:\n")
 #q4()

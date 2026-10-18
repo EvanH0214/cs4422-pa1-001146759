@@ -55,7 +55,7 @@ The 30 most frequent words before stopword removal are words like: 'the', 'and',
 The word-frequency distribution somewhat follows Zipf's law. The fitted exponent is the negative slope of the Zipf's (fitted) line (equation derived from taking log of Zipf's law --> transforms it into linear equation), which is 1.402. The distribution deviates from the fitted line at both the head and the tail. At the head, the distribution is lower than the Zipf's line, meaning that the word at higher ranks (1, 2, 3...-- common words) are less dominant than predicted by the fitted line. While at the tail, the distribution is above the Zipf's line, which means the words at the lower ranks (1000+, rarer words) appear more frequently what the line predicts.
 
 ## Q7) For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
-
+For one of the five randomly sampled pages, the top 2 tf-idf keywords are the professor's first and last name (since it's a faculty page). For the bes-owlexpress banner page, the top 5 keywords came out badly, because it had meaningless keywords like 'pagingoption' and 'currentpage', which might've been from the page's HTML, javascript or interface code. This could be fixed by filtering out things like HTML and javascript code, preserving the page text and storing it. While the other 3 pages had pretty good results that were relevant to their page, such as 'tour', 'chemistry', 'music' as the top 1 words for the other 3 pages. 
 
 ## Q8) Politeness evidence
 

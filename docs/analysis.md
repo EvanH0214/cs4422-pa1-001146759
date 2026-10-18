@@ -4,7 +4,7 @@
 
 ### Q1a) Which URL patterns consumed the most of your crawl budget?
 
-The URL patterns that consumed most of the crawl budget are digitalcommons.kennesaw.edu, cpe.kennesaw.edu,   facultyweb.kennesaw.edu, calender.kennesaw.edu, campus.kennesaw.edu, and kennesaw.edu using a total of 367 of the 500 URL limit.
+The URL patterns that consumed most of the crawl budget are digitalcommons.kennesaw.edu, cpe.kennesaw.edu, facultyweb.kennesaw.edu, calender.kennesaw.edu, campus.kennesaw.edu, and kennesaw.edu using a total of [Insert number of top few] of the 500 URL limit.
 
 ### Q1b) Could any of them be unlimited?
 
@@ -18,32 +18,32 @@ To circumvent this, we attempted to update our duplicate detection method, howev
 
 ### Q2a) How much of what you fetched was duplicate content: byte-identical, near-duplicate, or self-declared duplicate via <link rel="canonical">?
 
-382 documents identical documents skipped
+[Insert number of duplicate skips] documents identical documents skipped
 
 ### Q2b) Give three concrete example URL pairs from your crawl, one per category, and say what caused each duplication.
 
-byte-identical
+byte-identical:   https://kennesaw.edu/mobile/  /   https://maps.kennesaw.edu/
 
-near-duplicate
+near-duplicate:   https://advance.cpe.kennesaw.edu/ai-automation/registrations/new  /   https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new
 
 self-declared duplicate:  https://www.kennesaw.edu/  /  https://www.kennesaw.edu/index.php
 
 ## Q3) What were the five most common ways your fetches failed, ranked by count?
 
-('Exact duplicate', 88), ('Blocked by robots.txt', 61), ('Near duplicate', 11), ('Connection error', 4), ('TLS/SSL error', 2)
+[Insert top 5 errors]
 
 ## Q4) Which are the top 5 pages by incoming links and the top 5 by outgoing links?
 
-Incoming:
+Incoming: [Insert top 5 inlinks]
 
-Outgoing:
+Outgoing: [Insert top 5 outlinks]
 
 
 ## Q5) Boilerplate identification and removal
 
 ### Q5a) How much of each page is boilerplate? Report mean words per page before and after removal, and the top 5 longest pages under each.
 
-The mean words per page before removal was 1,354.14 and the mean words per page after removal is 1,245.04, the words reduced by approximately 8.05% per page. From the results, it can be seen that the word count for the top 3 longest pages before and after removal was unaffected, while the bottom 2 (4 and 5 from the top 5-- events.kennesaw.edu and csm.kennesaw.edu/chemistry-biochemistry/...) showed reductions of 183 and 307 words, respectively.
+The mean words per page before removal was [Insert mean words before removal] and the mean words per page after removal is [Insert mean words after removal], the words reduced by approximately [Insert percentage decrease] per page. From the results, it can be seen that the word count for the top 3 longest pages before and after removal was unaffected, while the bottom 2 (4 and 5 from the top 5-- events.kennesaw.edu and csm.kennesaw.edu/chemistry-biochemistry/...) showed reductions of 183 and 307 words, respectively.
 
 ## Q6) Text statistics
 
@@ -77,4 +77,4 @@ The word-frequency distribution somewhat follows Zipf's law. The fitted exponent
 
 ### Q8c) What was your overall request rate and total wall-clock time?
 
-  The request rate for our crawler was 1.98 pages per second, and the total wall clock time was 254.93 seconds
+  The request rate for our crawler was [Insert pages crawled / crawl time] pages per second, and the total wall clock time was [Insert crawl time] seconds

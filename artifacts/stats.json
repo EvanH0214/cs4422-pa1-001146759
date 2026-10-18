@@ -1,0 +1,55 @@
+{
+    "Seed URL": "https://www.kennesaw.edu",
+    "Page budget": 500,
+    "URLS seen": 34909,
+    "Max crawl delay": 120.0,
+    "Min crawl delay": 1,
+    "Pages_fetched": 505,
+    "Crawl_time": 278.87421210017055,
+    "robots_skips": 59,
+    "duplicate_skips": 386,
+    "in_links": [
+        [
+            "https://police.kennesaw.edu/",
+            4
+        ],
+        [
+            "https://stratcomm.kennesaw.edu/publications/magazines.php",
+            3
+        ],
+        [
+            "https://www.kennesaw.edu/apply.php",
+            2
+        ],
+        [
+            "https://www.kennesaw.edu/give.php",
+            2
+        ],
+        [
+            "https://www.kennesaw.edu/calendar.php",
+            2
+        ]
+    ],
+    "out_links": [
+        [
+            "https://digitalcommons.kennesaw.edu/authors.html",
+            26982
+        ],
+        [
+            "https://facultyweb.kennesaw.edu/",
+            1359
+        ],
+        [
+            "https://digitalcommons.kennesaw.edu/communities.html",
+            269
+        ],
+        [
+            "https://azindex.kennesaw.edu/",
+            241
+        ],
+        [
+            "https://digitalcommons.kennesaw.edu/barch_etd",
+            213
+        ]
+    ]
+}

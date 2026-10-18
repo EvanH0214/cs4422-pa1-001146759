@@ -3,6 +3,8 @@ import argparse
 from pathlib import Path
 from collections import Counter
 from urllib.parse import urlparse
+from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+import re
 
 # Configurations
 BOILERPLATE_THRESHOLD = 0.2
@@ -184,6 +186,55 @@ def q5():
 # Q6.a What are the 30 most frequent words before/after stopwords are removed? Describe the difference.
 # Q6.b Does the word-frequency distribution follow Zipf's law? What is the fitted exponent, and where does the distribution depart from it?
 
+def remove_stopwords(words, stopwords):
+    # Boolean mask-- same method as q5
+    word_removal = [False] * len(words)
+
+    # mark stop words in words
+    for i in range(len(words)):
+        if words[i] in stopwords:
+            word_removal[i] = True
+
+    # keeps the non-stopwords
+    cleaned_words = []
+    for i in range(len(words)):
+        if not word_removal[i]:
+            cleaned_words.append(words[i])
+    return cleaned_words
+
+def q6a():
+    pages = []
+    urls = []
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+        for line in corpus_file:
+            record = json.loads(line)
+            pages.append(record["text"])
+            urls.append(record["url_canonical"])
+
+    # counts words before and after removal
+    before_counter = Counter()
+    after_counter = Counter()
+    stopwords = set(ENGLISH_STOP_WORDS)
+    for page in pages:
+        # extract lowercase words containing at least 2 characters
+        words = re.findall(r"\b[a-z]{2,}\b", page.lower())
+
+        # count original words
+        before_counter.update(words)
+
+        # removes stopwords 
+        cleaned_words = remove_stopwords(words, stopwords)
+
+        # count the cleaned words
+        after_counter.update(cleaned_words)
+
+    print("\nTop 30 words before stopword removal:")
+    print(before_counter.most_common(30))
+
+    print("\nTop 30 words after stopword removal:")
+    print(after_counter.most_common(30))
+
+
 
 # Q7. For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
 
@@ -229,10 +280,13 @@ print("\n\nRunning q3:\n")
 #q3()
 
 print("\n\nRunning q4:\n")
-q4()
+#q4()
 
 print("\n\nRunning q5:\n")
 #q5()
+
+print("\n\nRunning q6a:\n")
+q6a()
 
 print("\n\nRunning q8a:\n")
 #q8a()

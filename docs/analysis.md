@@ -4,15 +4,15 @@
 
 ### Q1a) Which URL patterns consumed the most of your crawl budget?
 
-  The URL patterns that consumed most of the crawl budget are digitalcommons.kennesaw.edu, cpe.kennesaw.edu,   facultyweb.kennesaw.edu, calender.kennesaw.edu, campus.kennesaw.edu, and kennesaw.edu using a total of 367 of the 500 URL limit.
+The URL patterns that consumed most of the crawl budget are digitalcommons.kennesaw.edu, cpe.kennesaw.edu,   facultyweb.kennesaw.edu, calender.kennesaw.edu, campus.kennesaw.edu, and kennesaw.edu using a total of 367 of the 500 URL limit.
 
 ### Q1b) Could any of them be unlimited?
 
-  The digitalcommons.kennesaw.edu URL pattern may be unlimited due to our crawler discovering over 30k URL just from this  host.
+The digitalcommons.kennesaw.edu URL pattern may be unlimited due to our crawler discovering over 30k URL just from this  host.
 
 ### Q1c) What did you do about it, and why?
 
-  To circumvent this, we attempted to update our duplicate detection method, however even after the changes our crawler still recognized each of these as a unique URL.
+To circumvent this, we attempted to update our duplicate detection method, however even after the changes our crawler still recognized each of these as a unique URL.
 
 ## Q2) Duplicate-content census
 
@@ -32,11 +32,13 @@
 
 ### Q5a) How much of each page is boilerplate? Report mean words per page before and after removal, and the top 5 longest pages under each.
 
-  The mean words per page before removal was 1,354.14 and the mean words per page after removal is 1,245.04, the words reduced by approximately 8.05% per page. From the results, it can be seen that the word count for the top 3 longest pages before and after removal was unaffected, while the bottom 2 (4 and 5 from the top 5-- events.kennesaw.edu and csm.kennesaw.edu/chemistry-biochemistry/...) showed reductions of 183 and 307 words, respectively.
+The mean words per page before removal was 1,354.14 and the mean words per page after removal is 1,245.04, the words reduced by approximately 8.05% per page. From the results, it can be seen that the word count for the top 3 longest pages before and after removal was unaffected, while the bottom 2 (4 and 5 from the top 5-- events.kennesaw.edu and csm.kennesaw.edu/chemistry-biochemistry/...) showed reductions of 183 and 307 words, respectively.
 
 ## Q6) Text statistics
 
 ### Q6a) What are the 30 most frequent words before/after stopwords are removed? Describe the difference.
+
+The 30 most frequent words before stopword removal are words like: 'the', 'and', 'to', 'of', etc. The 30 most frequent words after removal are: 'kennesaw', 'campus', 'university', 'event', etc. There is actually quite a difference after stopword removal, the words after removal now actually contribute meaning to the context. We have to note that, the top #1, the word 'qe', remained unchanged for both before and after. 'qe' may have been a fragment that is in text, which may have been extracted from PDF. Alongside this issue are other "words" like 'href', which are HTML fragments, and are also in the top 30. These issues show that our crawler must've been saving PDF binary/compressed data and HTML markup for the text field in pages.jsonl.
 
 ### Q6b) Does the word-frequency distribution follow Zipf's law? What is the fitted exponent, and where does the distribution depart from it?
 

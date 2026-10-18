@@ -41,7 +41,7 @@ The mean words per page before removal was 1,354.14 and the mean words per page 
 The 30 most frequent words before stopword removal are words like: 'the', 'and', 'to', 'of', etc. The 30 most frequent words after removal are: 'kennesaw', 'campus', 'university', 'event', etc. There is actually quite a difference after stopword removal, the words after removal now actually contribute meaning to the context. We have to note that, the top #1, the word 'qe', remained unchanged for both before and after. 'qe' may have been a fragment that is in text, which may have been extracted from PDF. Alongside this issue are other "words" like 'href', which are HTML fragments, and are also in the top 30. These issues show that our crawler must've been saving PDF binary/compressed data and HTML markup for the text field in pages.jsonl.
 
 ### Q6b) Does the word-frequency distribution follow Zipf's law? What is the fitted exponent, and where does the distribution depart from it?
-
+The word-frequency distribution somewhat follows Zipf's law. The fitted exponent is the negative slope of the Zipf's (fitted) line (equation derived from taking log of Zipf's law --> transforms it into linear equation), which is 1.402. The distribution deviates from the fitted line at both the head and the tail. At the head, the distribution is lower than the Zipf's line, meaning that the word at higher ranks (1, 2, 3...-- common words) are less dominant than predicted by the fitted line. While at the tail, the distribution is above the Zipf's line, which means the words at the lower ranks (1000+, rarer words) appear more frequently what the line predicts.
 
 ## Q7) For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
 

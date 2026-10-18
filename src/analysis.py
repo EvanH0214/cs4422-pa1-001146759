@@ -5,6 +5,9 @@ from collections import Counter
 from urllib.parse import urlparse
 from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
 import re
+import numpy as np
+import matplotlib.pyplot as plt
+from bs4 import BeautifulSoup
 
 # Configurations
 BOILERPLATE_THRESHOLD = 0.2
@@ -234,7 +237,53 @@ def q6a():
     print("\nTop 30 words after stopword removal:")
     print(after_counter.most_common(30))
 
+def q6b():
+    word_counter = Counter()
 
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+        for line in corpus_file:
+            record = json.loads(line)
+            text = record.get("text", "")
+
+            # uses the same word extraction as Q6a
+            words = re.findall(r"\b[a-z]{2,}\b", text.lower())
+            word_counter.update(words)
+
+    # sorts frequencies from highest to lowest
+    frequencies = np.array(sorted(word_counter.values(), reverse=True))
+
+    # assign ranks to the sorted frequencies: 1 = most frequent word
+    ranks = np.arange(1, len(frequencies) + 1)
+
+    # fit log10(frequency) = intercept + slope * log10(rank)
+    log_ranks = np.log10(ranks)
+    log_frequencies = np.log10(frequencies)
+
+    slope, intercept = np.polyfit(log_ranks, log_frequencies, 1)
+    # fitted exponent = negative slope
+    exponent = -slope
+
+
+    print("\nQ6b: Zipf's Law Analysis")
+    print("Total word occurrences:", int(frequencies.sum()))
+    print("Distinct words:", len(frequencies))
+    print(f"Fitted exponent: {exponent:.4f}")
+
+    # plots frequencies and the fitted line
+    fitted_frequencies = 10 ** (intercept + slope * log_ranks)
+
+    plt.figure(figsize=(9, 6))
+    plt.loglog(ranks, frequencies, label="Observed word frequencies")
+    plt.loglog(ranks, fitted_frequencies, "--", label=f"Zipf line (s = {exponent:.3f})")
+
+    plt.xlabel("Word rank")
+    plt.ylabel("Word frequency")
+    plt.title("Word Frequency Distribution (Zipf's Law)")
+    plt.legend()
+    plt.grid(True, which="both", alpha=0.2)
+    plt.tight_layout()
+    plt.savefig("zipf_distribution.png", dpi=150)
+    plt.show()
 
 # Q7. For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
 
@@ -286,7 +335,10 @@ print("\n\nRunning q5:\n")
 #q5()
 
 print("\n\nRunning q6a:\n")
-q6a()
+#q6a()
+
+print("\n\nRunning q6a:\n")
+#q6b()
 
 print("\n\nRunning q8a:\n")
 #q8a()

@@ -385,19 +385,19 @@ def detect_near_dupes(page_content):
     pages_lock.acquire()
     try:
         with pages_path.open("r", encoding="utf-8") as corpus_file:
-                for line in corpus_file:
-                    # skips exact dupes
-                    record = json.loads(line)
-                    if record["content_hash"] == current_hash:
-                        continue
-                    # prevents error if jsonl contains blank line
-                    if not line.strip():
-                        continue
-                    record = json.loads(line)
-                    stored_shingles = generate_shingles(record["text"])
-                    similarity = jaccard_similarity(current_shingles, stored_shingles)
-                    if similarity >= NEAR_DUPE_THRESHOLD:
-                        return True
+            for line in corpus_file:
+                # skips exact dupes
+                record = json.loads(line)
+                if record["content_hash"] == current_hash:
+                    continue
+                # prevents error if jsonl contains blank line
+                if not line.strip():
+                    continue
+                record = json.loads(line)
+                stored_shingles = generate_shingles(record["text"])
+                similarity = jaccard_similarity(current_shingles, stored_shingles)
+                if similarity >= NEAR_DUPE_THRESHOLD:
+                    return True
     finally:
         pages_lock.release()
     return False

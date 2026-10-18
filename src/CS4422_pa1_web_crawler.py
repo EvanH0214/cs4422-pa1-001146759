@@ -29,6 +29,7 @@ blocked = []
 host_list = []
 host_threads = []
 dupes_list = []
+canonical_list = []
 
 
 # Create locks for threading
@@ -42,6 +43,7 @@ stats_lock = threading.Lock()
 dupe_lock = threading.Lock()
 in_link_lock = threading.Lock()
 out_link_lock = threading.Lock()
+canonical_lock = threading.Lock()
 
 
 # Create header for requests
@@ -337,6 +339,18 @@ def retry(url):
         print(f"Request error while retrying {url}: {e}")
 
 
+# Detect canonical links
+def find_canonical(page_content):
+    canonical_link = page_content.find("link", rel="canonical")
+    if canonical_link:
+            normalized = normalize_url(canonical_link)
+            if normalized:
+                canonical_lock.acquire()
+                canonical_list.append(normalized)
+                canonical_lock.release()
+                dump_crawl_log(datetime.now(timezone.utc).isoformat(), "skip", normalized, "Self-declared duplicate", None)
+                                
+
 # Detect duplicates method
 def detect_exact_dupes(page_content):
     # normalizes and hashes current page text
@@ -454,6 +468,10 @@ def scrape_page(page_content):
 
     current_out_links = 0
 
+    # Find self declared duplicates with link rel = "canonical"
+    find_canonical(soup)
+    
+
     # Parse each link from the raw html
     for link in soup.find_all("a", href=True):
 
@@ -472,9 +490,18 @@ def scrape_page(page_content):
         if normalized is None:
             continue
 
+
+        # Check if normalized link is in the canonical list
+        if normalized in canonical_list:
+            continue
+
+
+        # Add pointer to in_link Counter
         in_link_lock.acquire()
         in_links[normalized] += 1
         in_link_lock.release()
+
+        # Add 1 to the number of out links from the current page
         current_out_links +=1
         
         # Check if normalized url belongs to an existing host-- Critical Section
@@ -561,6 +588,8 @@ def normalize_url(url):
         dupe_lock.release()
         return None
     dupe_lock.release()
+
+    # Check if url is in the canonical list
 
     # Check if url is in any host queue
     host_lock.acquire()

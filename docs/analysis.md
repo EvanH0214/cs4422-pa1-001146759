@@ -18,14 +18,25 @@ To circumvent this, we attempted to update our duplicate detection method, howev
 
 ### Q2a) How much of what you fetched was duplicate content: byte-identical, near-duplicate, or self-declared duplicate via <link rel="canonical">?
 
+382 documents identical documents skipped
+
 ### Q2b) Give three concrete example URL pairs from your crawl, one per category, and say what caused each duplication.
 
+byte-identical
+
+near-duplicate
+
+self-declared duplicate:  https://www.kennesaw.edu/  /  https://www.kennesaw.edu/index.php
 
 ## Q3) What were the five most common ways your fetches failed, ranked by count?
 
 ('Exact duplicate', 88), ('Blocked by robots.txt', 61), ('Near duplicate', 11), ('Connection error', 4), ('TLS/SSL error', 2)
 
 ## Q4) Which are the top 5 pages by incoming links and the top 5 by outgoing links?
+
+Incoming:
+
+Outgoing:
 
 
 ## Q5) Boilerplate identification and removal

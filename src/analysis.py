@@ -8,6 +8,8 @@ import re
 import numpy as np
 import matplotlib.pyplot as plt
 from bs4 import BeautifulSoup
+import math
+import random
 
 # Configurations
 BOILERPLATE_THRESHOLD = 0.2
@@ -294,6 +296,65 @@ def q6b():
     plt.show()
 
 # Q7. For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
+# finds tf-idf using the textbook formula
+def q7():
+    pages = []
+    urls = []
+
+    # load the corpus
+    with pages_path.open("r", encoding="utf-8") as corpus_file:
+        for line in corpus_file:
+            record = json.loads(line)
+            pages.append(record.get("text", ""))
+            urls.append(record.get("url_canonical", "Unknown URL"))
+
+    if not pages:
+        print("No pages found.")
+        return
+
+    # tokenize each page 
+    tokenized_pages = []
+    for text in pages:
+        words = re.findall(r"\b[a-z]{2,}\b", text.lower())
+        tokenized_pages.append(words)
+
+    # counts how many documents (pages) contain each term (doc frequency)
+    document_frequency = Counter()
+    for words in tokenized_pages:
+        document_frequency.update(set(words))
+    total_pages = len(tokenized_pages)
+
+    # calculates the tf-idf scores for every document
+    tfidf_scores = []
+    for words in tokenized_pages:
+        term_counts = Counter(words)
+        total_terms = len(words)
+        scores = {}
+
+        if total_terms > 0:
+            for term, count in term_counts.items():
+                # calculates term frequency
+                tf = count / total_terms
+                # document frequency
+                df = document_frequency[term]
+                # calculates inverse document frequency (idf)
+                idf = math.log10(total_pages / df)
+                # tf-idf score = tf * idf
+                scores[term] = tf * idf
+        tfidf_scores.append(scores)
+
+    # takes random sample with random seed 42
+    rng = random.Random(42)
+    rsample_pages = rng.sample(range(len(pages)),min(5, len(pages)))
+
+    print("\nQ7: TF-IDF using the textbook formula")
+    # prints the top 5 tf-idf keywords for the random sample pages
+    for index in rsample_pages:
+        top_terms = sorted(tfidf_scores[index].items(),key=lambda item: item[1],reverse=True)[:5]
+        print(f"\nURL: {urls[index]}")
+        print("Top 5 keywords:")
+        for term, score in top_terms:
+            print(f"  {term}: {score:.3f}")
 
 
 # Q8. Politeness evidence
@@ -337,7 +398,7 @@ print("\n\nRunning q3:\n")
 #q3()
 
 print("\n\nRunning q4:\n")
-q4()
+#q4()
 
 print("\n\nRunning q5:\n")
 #q5()
@@ -345,8 +406,11 @@ print("\n\nRunning q5:\n")
 print("\n\nRunning q6a:\n")
 #q6a()
 
-print("\n\nRunning q6a:\n")
+print("\n\nRunning q6b:\n")
 #q6b()
+
+print("\n\nRunning q7:\n")
+q7()
 
 print("\n\nRunning q8a:\n")
 #q8a()

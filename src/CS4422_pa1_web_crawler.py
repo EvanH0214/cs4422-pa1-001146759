@@ -490,6 +490,8 @@ def scrape_page(page_content):
         if normalized is None:
             continue
 
+        if urlparse(normalized).hostname == "digitalcommons.kennesaw.edu":
+            continue
 
         # Check if normalized link is in the canonical list
         if normalized in canonical_list:

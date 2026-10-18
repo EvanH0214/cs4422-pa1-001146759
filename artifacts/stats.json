@@ -1,13 +1,13 @@
 {
     "Seed URL": "https://www.kennesaw.edu",
     "Page budget": 500,
-    "URLS seen": 34909,
+    "URLS seen": 5069,
     "Max crawl delay": 120.0,
     "Min crawl delay": 1,
-    "Pages_fetched": 505,
-    "Crawl_time": 278.87421210017055,
-    "robots_skips": 59,
-    "duplicate_skips": 386,
+    "Pages_fetched": 503,
+    "Crawl_time": 253.24763430003077,
+    "robots_skips": 86,
+    "duplicate_skips": 410,
     "in_links": [
         [
             "https://police.kennesaw.edu/",
@@ -22,34 +22,34 @@
             2
         ],
         [
-            "https://www.kennesaw.edu/give.php",
+            "https://www.kennesaw.edu/calendar.php",
             2
         ],
         [
-            "https://www.kennesaw.edu/calendar.php",
+            "https://azindex.kennesaw.edu/",
             2
         ]
     ],
     "out_links": [
         [
-            "https://digitalcommons.kennesaw.edu/authors.html",
-            26982
-        ],
-        [
             "https://facultyweb.kennesaw.edu/",
-            1359
-        ],
-        [
-            "https://digitalcommons.kennesaw.edu/communities.html",
-            269
+            1356
         ],
         [
             "https://azindex.kennesaw.edu/",
-            241
+            238
         ],
         [
-            "https://digitalcommons.kennesaw.edu/barch_etd",
-            213
+            "https://calendar.kennesaw.edu/calendar",
+            118
+        ],
+        [
+            "https://calendar.kennesaw.edu/bailey_performance_center",
+            111
+        ],
+        [
+            "https://www.kennesaw.edu",
+            109
         ]
     ]
 }

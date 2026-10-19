@@ -1,14 +1,18 @@
 {
     "Seed URL": "https://www.kennesaw.edu",
     "Page budget": 500,
-    "URLS seen": 5069,
+    "URLS seen": 4977,
     "Max crawl delay": 120.0,
     "Min crawl delay": 1,
-    "Pages_fetched": 503,
-    "Crawl_time": 253.24763430003077,
-    "robots_skips": 86,
-    "duplicate_skips": 410,
+    "Pages_fetched": 504,
+    "Crawl_time": 270.00890859999345,
+    "robots_skips": 80,
+    "duplicate_skips": 407,
     "in_links": [
+        [
+            "https://legal.kennesaw.edu/open_records_requests.php",
+            8
+        ],
         [
             "https://police.kennesaw.edu/",
             4
@@ -24,20 +28,16 @@
         [
             "https://www.kennesaw.edu/calendar.php",
             2
-        ],
-        [
-            "https://azindex.kennesaw.edu/",
-            2
         ]
     ],
     "out_links": [
         [
             "https://facultyweb.kennesaw.edu/",
-            1356
+            1359
         ],
         [
             "https://azindex.kennesaw.edu/",
-            238
+            244
         ],
         [
             "https://calendar.kennesaw.edu/calendar",
@@ -49,7 +49,7 @@
         ],
         [
             "https://www.kennesaw.edu",
-            109
+            103
         ]
     ]
 }

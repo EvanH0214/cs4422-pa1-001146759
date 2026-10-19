@@ -290,7 +290,7 @@ def q6b():
     plt.legend()
     plt.grid(True, which="both", alpha=0.2)
     plt.tight_layout()
-    plt.savefig("zipf_distribution.png", dpi=150)
+    plt.savefig("blocked_zipf_distribution.png", dpi=150)
     plt.show()
 
 # Q7. For 5 randomly sampled pages, what are the top 5 TF-IDF keywords each — and where they come out badly, why, and what fixes it?
@@ -346,7 +346,7 @@ print("\n\nRunning q6a:\n")
 #q6a()
 
 print("\n\nRunning q6a:\n")
-#q6b()
+q6b()
 
 print("\n\nRunning q8a:\n")
 #q8a()

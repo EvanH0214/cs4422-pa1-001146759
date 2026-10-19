@@ -63,7 +63,17 @@ def q1b():
 
 # Q2. Duplicate-content census
 # Q2.a How much of what you fetched was duplicate content: byte-identical, near-duplicate, or self-declared duplicate via <link rel="canonical">?
+def q2a():
+    with stats_path.open("r", encoding="utf-8") as stats_file:
+        record = json.load(stats_file)
+        print("Duplicate content:" + str(record["duplicate_skips"]))
+
 # Q2.b Give three concrete example URL pairs from your crawl, one per category, and say what caused each duplication.
+#byte-identical: https://kennesaw.edu/mobile/ / https://maps.kennesaw.edu/
+
+#near-duplicate: https://advance.cpe.kennesaw.edu/ai-automation/registrations/new / https://advance.cpe.kennesaw.edu/ai-for-hr/registrations/new
+
+#self-declared duplicate: https://www.kennesaw.edu/ / https://www.kennesaw.edu/index.php
 
 
 # Q3. What were the five most common ways your fetches failed, ranked by count?
@@ -394,8 +404,11 @@ print("Running q1a:\n")
 print("\n\nRunning q1b:\n")
 #q1b()
 
+print("\n\nRunning q2a:\n")
+q2a()
+
 print("\n\nRunning q3:\n")
-q3()
+#q3()
 
 print("\n\nRunning q4:\n")
 #q4()

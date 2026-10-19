@@ -293,7 +293,7 @@ def q6b():
     fitted_frequencies = 10 ** (intercept + slope * log_ranks)
 
     plt.figure(figsize=(9, 6))
-    plt.loglog(ranks, frequencies, label="Observed word frequencies")
+    plt.loglog(ranks, frequencies, '.', label="Observed word frequencies")
     plt.loglog(ranks, fitted_frequencies, "--", label=f"Zipf line (s = {exponent:.3f})")
 
     plt.xlabel("Word rank")
@@ -420,10 +420,10 @@ print("\n\nRunning q6a:\n")
 #q6a()
 
 print("\n\nRunning q6b:\n")
-#q6b()
+q6b()
 
 print("\n\nRunning q7:\n")
-q7()
+#q7()
 
 print("\n\nRunning q8a:\n")
 #q8a()

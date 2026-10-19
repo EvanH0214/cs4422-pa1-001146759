@@ -405,7 +405,7 @@ print("\n\nRunning q1b:\n")
 #q1b()
 
 print("\n\nRunning q2a:\n")
-q2a()
+#q2a()
 
 print("\n\nRunning q3:\n")
 #q3()
@@ -420,7 +420,7 @@ print("\n\nRunning q6a:\n")
 #q6a()
 
 print("\n\nRunning q6b:\n")
-q6b()
+#q6b()
 
 print("\n\nRunning q7:\n")
 #q7()
@@ -433,3 +433,12 @@ print("\n\nRunning q8b:\n")
 
 print("\n\nRunning q8c:\n")
 #q8c()
+
+failure_counter = Counter()
+with crawl_path.open("r", encoding="utf-8") as crawl_file:
+    for line in crawl_file:
+        record = json.loads(line)
+        if "failure_reason" in record:
+            failure_counter[record["failure_reason"]] += 1
+
+    print(failure_counter)

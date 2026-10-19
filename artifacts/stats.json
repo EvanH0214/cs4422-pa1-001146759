@@ -1,13 +1,13 @@
 {
     "Seed URL": "https://www.kennesaw.edu",
     "Page budget": 500,
-    "URLS seen": 34798,
+    "URLS seen": 35020,
     "Max crawl delay": 120.0,
     "Min crawl delay": 1,
-    "Pages_fetched": 505,
-    "Crawl_time": 258.7021039999963,
-    "robots_skips": 60,
-    "duplicate_skips": 366,
+    "Pages_fetched": 506,
+    "Crawl_time": 252.25076099997386,
+    "robots_skips": 59,
+    "duplicate_skips": 373,
     "in_links": [
         [
             "https://legal.kennesaw.edu/open_records_requests.php",
@@ -15,7 +15,7 @@
         ],
         [
             "https://police.kennesaw.edu/",
-            3
+            4
         ],
         [
             "https://stratcomm.kennesaw.edu/publications/magazines.php",
@@ -45,7 +45,7 @@
         ],
         [
             "https://azindex.kennesaw.edu/",
-            246
+            240
         ],
         [
             "https://digitalcommons.kennesaw.edu/barch_etd",
